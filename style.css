@@ -10,12 +10,11 @@ canvas {
 }
 
 .mi-audio {
-  width: 100%;          /* Que se adapte al contenedor */
+  width: 100%;          
   max-width: 500px;     
   display: block;       
   margin: 20px auto;    
 
-  background-color: transparent; /* Fondo transparente */
-  border: none;                  /* Quita borde si existiera */
-  box-shadow: none;              /* Sin sombra */
-}
+  background-color: transparent; 
+  border: none;                 
+  box-shadow: none;              
