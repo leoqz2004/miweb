@@ -1,0 +1,21 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    overflow: hidden; 
+    background-color: #000; 
+}
+
+canvas {
+    display: block; 
+}
+
+.mi-audio {
+  width: 100%;          /* Que se adapte al contenedor */
+  max-width: 500px;     
+  display: block;       
+  margin: 20px auto;    
+
+  background-color: transparent; /* Fondo transparente */
+  border: none;                  /* Quita borde si existiera */
+  box-shadow: none;              /* Sin sombra */
+}
