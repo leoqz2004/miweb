@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <!-- Unidad 1: Viewport para diseño responsivo -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEOMUNDO Z - Periodismo Global Independiente</title>
+  
+  <!-- Tipografías elegantes estilo New York Times / El Peruano -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+  
+  <!-- Enlace a los estilos compilados -->
+  <link rel="stylesheet" href="dist/main.css">
+  <link rel="stylesheet" href="dist/asteroides.css">
+</head>
+<body>
+
+  <!-- Barra de progreso de lectura (Fuel Bar original) -->
+  <div class="fuel-bar" aria-hidden="true">
+    <div class="fuel-fill"></div>
+    <div class="fuel-ship">📰</div>
+  </div>
+
+  <!-- NAVBAR RESPONSIVA (Unidad 1 y Flexbox) -->
+  <header class="navbar">
+    <div class="brand">
+      GEOMUNDO <span>Z</span>
+    </div>
+    <!-- Botón responsive para móviles (Nav Toggle) -->
+    <button class="nav-toggle" aria-label="Abrir menú de navegación" aria-expanded="false">☰</button>
+    <nav class="nav-links">
+      <a href="#hero">PORTADA</a>
+      <a href="#tech">TECNOLOGÍA</a>
+      <a href="#geopolitica">GEOPOLÍTICA</a>
+      <a href="#fifa">MUNDIAL 2026</a>
+      <a href="#opinion">OPINIÓN</a>
+      <a href="#economia">ECONOMÍA</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ESTACIÓN 0: PORTADA / HERO (Unidad 1: Texto responsivo e Introducción) -->
+    <section id="hero" class="station station-hero">
+      <div class="masthead-date">Edición Global • Arequipa, 2026</div>
+      <h1> NOTICIAS GLOBALES <span> Z</span></h1>
+      <p class="subtitle">Análisis profundo sobre los movimientos geopolíticos, la revolución de la inteligencia artificial y la antesala deportiva más grande del siglo.</p>
+      <div class="live-counter">ACTUALIZACIÓN EN VIVO</div>
+      <a href="#tech" class="cta">Leer Edición del Día</a>
+    </section>
+
+    <!-- ESTACIÓN 2: SECCIÓN TECNOLOGÍA (Unidad 1: CSS Grid Layout) -->
+    <section id="tech" class="station station-tech">
+      <div class="eyebrow">Tecnología & Innovación</div>
+      <h2>REVOLUCIÓN TECNOLÓGICA Z</h2>
+      
+      <!-- Grid modular de noticias utilizando las clases base -->
+      <div class="news-grid">
+        
+        <!-- Noticia Principal (Headline) -->
+        <article class="news-card news-card--headline">
+          <img src=".\IMAGENES DE PROYECTO\CUANTICA.jpg" alt="Computación Cuántica" onerror="this.src='https://picsum.photos/800/450?random=1'">
+          <div class="news-body">
+            <span class="tag">CUÁNTICA</span>
+            <h3>Nvidia presenta el chip RTX Spark: nuevo procesador con IA local para computadoras</h3>
+            <p>Nvidia presentó un nuevo chip que incorpora capacidades de Inteligencia Artificial (IA) directamente en computadoras portátiles y de escritorio, en una apuesta para competir de manera más directa con Advanced Micro Devices (AMD), Intel, Apple y Qualcomm en el mercado de PC impulsadas por IA.
+
+
+El director ejecutivo de Nvidia, Jensen Huang, quien se encuentra en Taiwán para la conferencia Computex 2026, afirmó que el chip RTX Spark forma parte del esfuerzo conjunto con Microsoft para “reinventar la PC” para la era de la IA, tras tres años de colaboración entre ambas compañías. Nvidia presenta el chip RTX Spark: nuevo procesador con IA local para computadoras / Foto: Reuters
+Tras dominar el mercado de los chips que entrenan modelos de IA, Nvidia ahora está haciendo esfuerzos para captar el aumento previsto de la demanda de procesadores de inferencia, chips que impulsan las respuestas de IA a las consultas de los usuarios y los agentes diseñados para gestionar tareas rutinarias. Con esta estrategia, la compañía intenta abrirse paso en el mercado de computadoras personales en un contexto de creciente competencia y dudas de inversionistas sobre el ritmo de adopción de las PC con IA.
+
+Mientras HP aseguró recientemente que estos dispositivos impulsaron sus ventas trimestrales, Dell reconoció que la demanda no ha cumplido con las expectativas iniciales. Qualcomm también ha impulsado computadoras con IA en alianza con Microsoft.
+
+“RTX Spark busca transformar la PC tradicional centrada en aplicaciones en una computadora personal con IA realmente útil que, con el tiempo, estará presente en todos los hogares a medida que los agentes privados de IA se vuelvan fundamentales”, afirmó Neil Shah, cofundador de Counterpoint Research.</p>
+          </div>
+        </article>
+
+        <!-- Noticia Secundaria (Second) -->
+        <article class="news-card news-card--second">
+          <img src=".\IMAGENES DE PROYECTO\CUANTICA 2.jpg" alt="Modelos de IA" onerror="this.src='https://picsum.photos/800/450?random=2'">
+          <div class="news-body">
+            <span class="tag">INTELIGENCIA ARTIFICIAL</span>
+            <h3>Nvidia señala una demanda de IA más amplia y mantiene su hoja de ruta</h3>
+            <p>Investing.com - NVIDIA comunicó a sus inversores que su hoja de ruta de infraestructura de IA sigue en marcha, que la demanda en todos los segmentos de clientes se mantiene sólida y que las futuras generaciones de sus productos para centros de datos ofrecerán mejoras significativas en eficiencia energética.
+
+La actualización llega en un momento en que los inversores siguen de cerca a Nvidia en busca de señales de que el disparado gasto en IA por parte de los grandes proveedores de nube se está extendiendo hacia empresas, clientes soberanos y startups de IA, al tiempo que observan posibles interrupciones en su hoja de ruta de productos, cadena de suministro o rentabilidad en un contexto de competencia cada vez más intensa.</p>
+          </div>
+        </article>
+
+        <!-- Columna Lateral (Sidebar) -->
+        <article class="news-card news-card--sidebar">
+          <img src=".\IMAGENES DE PROYECTO\TECNOLOGIA.jpg" alt="Baterías de Grafeno" onerror="this.src='https://picsum.photos/400/600?random=3'">
+          <div class="news-body">
+            <span class="tag">TECNOLOGIA</span>
+            <h3>El Lamborghini Temerario 2026 se centra en emociones de infarto.</h3>
+            <p>Ya sea de pie detrás del motor o sentado al volante, causa una gran primera impresión: un sonido ronco y exótico, y una rápida respuesta del acelerador. La aceleración en el rango medio de revoluciones es sorprendentemente lineal para un motor con tanta potencia. Hay que vigilar el tacómetro con atención en el modo Corsa más agresivo, ya que es necesario accionar las levas fijas para los cambios manuales, y el V8 no pierde potencia en absoluto al acercarse a su límite de revoluciones de cinco dígitos. Un sonido enérgico inunda el habitáculo, realzado por una conexión mecánica entre el motor y el cortafuegos, sin artificios electrónicos. Sin embargo, accionar ambas levas para poner punto muerto en marcha no es la mejor manera de lucirse, ya que el límite de revoluciones es de tan solo 3000 rpm.</p>
+          </div>
+        </article>
+
+        <!-- Puerto de datos (Dock) -->
+        <article class="news-card news-card--dock">
+          <img src=".\IMAGENES DE PROYECTO\TERREMOTO.jpg" alt="Metaverso Z" onerror="this.src='https://picsum.photos/400/600?random=4'">
+          <div class="news-body">
+            <span class="tag">TERREMOTOS</span>
+            <h3>Terremotos en Venezuela: Sube a 1.943 la cifra de muertos y a 10.571 los heridos por doble sismo | La Guaira | Delcy Rodríguez | Jorge Rodríguez | Últimas | EL COMERCIO PERÚ</h3>
+            <p>Más de 3.300 rescatistas enviados desde 27 países, coordinados por la ONU, se encuentran en Venezuela para apoyar en las labores de búsqueda de supervivientes bajo los escombros, según informó hoy la presidenta encargada, Delcy Rodríguez.
+
+El doble terremoto del miércoles es el más mortífero que ha vivido Venezuela en el último siglo. Cincuenta y nueve años antes, en julio de 1967, se produjo en las proximidades de Caracas un sismo en el que murieron 245 personas, miles sufrieron heridas y los daños materiales fueron muy cuantiosos.
+
+Los sismos de hace seis días afectaron Caracas y otros seis estados del norte del país. La región más afectada ha sido La Guaira, una zona costera que ya vivió una tragedia por un deslave en 1999 que dejó miles de muertos. "Diario El Comercio. Todos los derechos reservados."</p>
+          </div>
+        </article>
+
+        <!-- Noticia Horizontal (Banner) -->
+        <article class="news-card news-card--banner">
+          <img src=".\IMAGENES DE PROYECTO\GEOPOLITICA.jpg" alt="Fábricas de Semiconductores" onerror="this.src='https://picsum.photos/400/300?random=5'">
+          <div class="news-body">
+            <span class="tag">GEOPOLITICA</span>
+            <h3>Donald Trump dice que Estados Unidos cobrará una tasa del 20% para proteger los barcos en el estrecho de Ormuz</h3>
+            <p>Trump anunció igualmente, en su plataforma Truth Social, la reinstauración del bloqueo de los puertos iraníes.
+
+Estados Unidos será “el guardián del estrecho de Ormuz” y por ello cobrará “una tasa del 20 % sobre toda la carga transportada, por todos y cada uno de los costos necesarios para hacer el trabajo de proporcionar seguridad y protección a esta sección tan volátil del mundo”, indicó el mandatario.</p>
+        <button class="btn-compare--sass">Ver Análisis de Tratados</button></p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 3: SECCIÓN GEOPOLÍTICA / NEBULOSA SASS (Efectos interactivos, Nesting, @for y @each) -->
+    <section id="geopolitica" class="station-nebula">
+      <!-- El campo de estrellas dinámico original simula ahora "puntos calientes" en el mapa geopolítico -->
+      <div class="star-field"></div>
+      <div class="nebula-content">
+        <div class="eyebrow">Geopolítica Z</div>
+        <h2>EL NUEVO EQUILIBRIO</h2>
+        <p>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 4: MUNDIAL FIFA 2026 (Comparador LESS/SASS y Estructuración de Tablas Periodísticas) -->
+    <section id="fifa" class="station station-fifa">
+      <div class="eyebrow">Deportes Globales</div>
+      <h2>MUNDIAL FIFA 2026:</h2>
+      <p class="compare-note">La cobertura más completa de los estadios, selecciones clasificadas y tecnología de transmisión holográfica.</p>
+      
+      <div class="compare-grid">
+        
+        <!-- Tarjeta SASS adaptada a Noticia de Sedes -->
+        <article class="compare-card compare-card--sass">
+          <img src=".\IMAGENES DE PROYECTO\DEPORTES.jpg" alt="Estadios del Mundial" onerror="this.src='https://picsum.photos/400/250?random=10'">
+          <div class="compare-body">
+            <h3>Argentina vs Inglaterra por el Mundial 2026: fecha, hora y canal para ver la semifinal</h3>
+            <p>La Albiceleste llegó a esta instancia tras dejar en el camino a Cabo Verde (dieciseisavos), Egipto (octavos) y Suiza (cuartos), todos rivales muy complicados que exigieron el máximo esfuerzo. Además, tiene en Lionel Messi a su principal figura con 8 goles en 6 partidos disputados. "Diario El Comercio. Todos los derechos reservados."</p>
+            <button class="btn-compare--sass">Estadios SASS</button>
+          </div>
+        </article>
+
+        <!-- Tarjeta LESS adaptada a Noticia de Fixture -->
+        <article class="compare-card compare-card--less">
+          <img src=".\IMAGENES DE PROYECTO\CRONOGRAMA.jpg" alt="Fixture Mundial" onerror="this.src='https://picsum.photos/400/250?random=11'">
+          <div class="compare-body">
+            <h3>Organización del Calendario</h3>
+            <p>Mañana martes, 14 de julio 2026
+Partido 101 – 15:00 - Francia 0-2 España - Estadio Dallas
+
+Miércoles, 15 de julio 2026
+Partido 102 – 15:00 - Inglaterra v Argentina - Estadio Atlanta</p>
+            <button class="btn-compare--less">Calendario LESS</button>
+          </div>
+        </article>
+
+      </div>
+
+      <!-- ORGANIZACIÓN DE TABLAS CON NOTICIA E IMAGEN (Pedido explícito del usuario) -->
+      <div style="margin-top: 3rem; overflow-x: auto;">
+        <h3 style="font-family: var(--font-display); margin-bottom: 1.5rem; text-align: center; color: var(--star-gold);">
+          TABLA DE MARCADORES Y REUNIONES TÉCNICAS
+        </h3>
+        <table style="width: 100%; border-collapse: collapse; background: rgba(26, 33, 64, 0.4); border: 1px solid rgba(242, 201, 76, 0.25);">
+          <thead>
+            <tr style="background: rgba(242, 201, 76, 0.1); border-bottom: 2px solid #bfa15f;">
+              <th style="padding: 1rem; text-align: left; font-family: 'JetBrains Mono', monospace;">IMAGEN</th>
+              <th style="padding: 1rem; text-align: left; font-family: 'JetBrains Mono', monospace;">NOTICIA</th>
+              <th style="padding: 1rem; text-align: left; font-family: 'JetBrains Mono', monospace;">ESTADO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+              <td style="padding: 1rem; width: 120px;">
+                <img src="./index_files/match_colombia.jpg" alt="Colombia" style="width: 100px; height: 60px; object-fit: cover; border-radius: 2px;" onerror="this.src='https://picsum.photos/100/60?random=12'">
+              </td>
+              <td style="padding: 1rem;">
+                <strong style="color: #ffffff; display: block; margin-bottom: 0.3rem;">Estadísticas del Grupo A: Conmebol lidera expectativas</strong>
+                <span style="font-size: 0.85rem; color: #8a94a6;">La selección cafetera clasifica invicta tras un partido táctico impecable frente a sus rivales continentales.</span>
+              </td>
+              <td style="padding: 1rem; font-family: 'JetBrains Mono', monospace; color: #00b4d8;">CLASIFICADO</td>
+            </tr>
+            <tr style="border-bottom: 1px solid rgba(255, 255, 255, 0.08);">
+              <td style="padding: 1rem; width: 120px;">
+                <img src="./index_files/match_mural.jpg" alt="Arbitraje" style="width: 100px; height: 60px; object-fit: cover; border-radius: 2px;" onerror="this.src='https://picsum.photos/100/60?random=13'">
+              </td>
+              <td style="padding: 1rem;">
+                <strong style="color: #ffffff; display: block; margin-bottom: 0.3rem;">Implementación del fuera de juego robótico automatizado</strong>
+                <span style="font-size: 0.85rem; color: #8a94a6;">Cámaras de alta velocidad instaladas bajo la cubierta de los estadios calcularán el volumen corporal en nanosegundos.</span>
+              </td>
+              <td style="padding: 1rem; font-family: 'JetBrains Mono', monospace; color: #e06c35;">APROBADO</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 5: ÚLTIMA HORA (Unidad 3: Transformaciones 3D y Efectos Ópticos de Alerta) -->
+    <section id="geopolitica-radar" class="station station-breaking">
+      <div class="eyebrow">Radar de Alertas Z</div>
+      <h2>MONITOR DE PRENSA EN TIEMPO REAL</h2>
+      <p style="color: #8a94a6; margin-bottom: 2.5rem; max-width: 60ch;">Efecto radar tridimensional que representa el constante flujo de cables periodísticos procedentes de satélites informativos.</p>
+      
+      <!-- Efecto 3D original que ahora simula un radar geopolítico -->
+      <div style="display: flex; gap: 1rem; justify-content: center; align-items: center; flex-wrap: wrap;">
+        <div class="radar-ring"></div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 6: SECCIÓN OPINIÓN / COLONIA MATERIAL (Unidad 3: Material Design / Materialize) -->
+    <section id="opinion" class="station station-opinion">
+      <div class="eyebrow">Firmas Invitadas</div>
+      <h2>COLUMNAS DE OPINIÓN</h2>
+      
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+        
+        <!-- Columna de Opinión 1 (Estructura Material Card con efecto ripple en botón) -->
+        <article class="material-card">
+          <img src="./index_files/opinion_1.jpg" alt="Columnista 1" style="height: 180px; object-fit: cover;" onerror="this.src='https://picsum.photos/400/250?random=20'">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #d32f2f; font-weight: bold; text-transform: uppercase;">GEOPOLÍTICA</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; margin: 0.5rem 0; color: #1a1a2e;">¿El fin de la hegemonía del dólar digital?</h3>
+          <p style="font-size: 0.85rem; color: #4a4a4a; margin-bottom: 1.5rem;">"La unificación de las divisas virtuales de los bancos centrales de Asia acelera la transición hacia un modelo financiero libre de intermediación tradicional."</p>
+          <button class="btn-ripple" style="background: #1a1a2e; color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: bold;">
+            LEER COLUMNA
+          </button>
+        </article>
+
+        <!-- Columna de Opinión 2 -->
+        <article class="material-card">
+          <img src="./index_files/opinion_2.jpg" alt="Columnista 2" style="height: 180px; object-fit: cover;" onerror="this.src='https://picsum.photos/400/250?random=21'">
+          <span style="font-family: 'JetBrains Mono', monospace; font-size: 0.75rem; color: #d32f2f; font-weight: bold; text-transform: uppercase;">SOCIEDAD</span>
+          <h3 style="font-family: 'Playfair Display', serif; font-size: 1.25rem; margin: 0.5rem 0; color: #1a1a2e;">El costo ético del algoritmo autónomo</h3>
+          <p style="font-size: 0.85rem; color: #4a4a4a; margin-bottom: 1.5rem;">"Dejar las decisiones de distribución de recursos básicos en manos de redes neuronales cerradas plantea severos dilemas de equidad que la ley ignora."</p>
+          <button class="btn-ripple" style="background: #1a1a2e; color: #fff; border: none; padding: 0.6rem 1.2rem; border-radius: 4px; cursor: pointer; font-family: 'Inter', sans-serif; font-size: 0.8rem; font-weight: bold;">
+            LEER COLUMNA
+          </button>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 7: ECONOMÍA (Unidad 4: Bootstrap Layout) -->
+    <section id="economia" class="station station-economia">
+      <div class="eyebrow">Finanzas Mundiales</div>
+      <h2>MERCADOS Y ECONOMÍA Z</h2>
+      
+      <!-- Simulación de grilla Bootstrap respetando las clases del CSS base -->
+      <div class="row" style="display: flex; gap: 1.5rem; flex-wrap: wrap;">
+        <div class="col-md-6" style="flex: 1; min-width: 280px;">
+          <div class="card" style="background: #151a24; border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 4px;">
+            <img src="./index_files/eco_indices.jpg" alt="Bolsa de Valores" style="width: 100%; height: 160px; object-fit: cover; margin-bottom: 1rem;" onerror="this.src='https://picsum.photos/400/200?random=30'">
+            <h3 style="color: #bfa15f; margin-bottom: 0.5rem;">Índices Tecnológicos se estabilizan</h3>
+            <p style="font-size: 0.85rem; color: #8a94a6;">La inyección de capital en infraestructura cuántica genera un repunte del 4.2% en los índices bursátiles de las principales potencias aliadas.</p>
+          </div>
+        </div>
+        <div class="col-md-6" style="flex: 1; min-width: 280px;">
+          <div class="card" style="background: #151a24; border: 1px solid rgba(255,255,255,0.1); padding: 1.5rem; border-radius: 4px;">
+            <img src="./index_files/eco_commodities.jpg" alt="Materias primas" style="width: 100%; height: 160px; object-fit: cover; margin-bottom: 1rem;" onerror="this.src='https://picsum.photos/400/200?random=31'">
+            <h3 style="color: #bfa15f; margin-bottom: 0.5rem;">Metales raros marcan récord de valor</h3>
+            <p style="font-size: 0.85rem; color: #8a94a6;">La demanda internacional de litio de alta pureza y neodimio para la propulsión eléctrica dispara las cotizaciones de contratos a largo plazo.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 8: MARCADOR EN VIVO — Mundial FIFA 2026 (Unidad 4: Clases utilitarias Tailwind CSS) -->
+    <section class="station-tailwind" style="background: #0e1118; padding: 4rem 2.5rem; border-top: 1px solid rgba(255, 255, 255, 0.05);">
+      <div style="max-width: 600px; margin: 0 auto; text-align: center;">
+        <span class="eyebrow" style="color: #e06c35;">MONITOR TAILWIND CSS</span>
+        <h2 style="font-family: 'Playfair Display', serif; color: #ffffff; margin-bottom: 1.5rem;">Próximos Encuentros de Clasificación</h2>
+        
+        <!-- Contenedor diseñado emulando clases de Tailwind -->
+        <div class="bg-slate-800 p-6 rounded-lg shadow-lg border border-slate-700" style="background: #151a24; padding: 1.5rem; border-radius: 8px; border: 1px solid rgba(255,255,255,0.1); margin-top: 1rem;">
+          <div class="flex justify-between items-center text-white" style="display: flex; justify-content: space-between; align-items: center; color: #fff;">
+            <span class="font-bold" style="font-weight: bold;">ARGENTINA ARG</span>
+            <span class="text-xs px-2 py-1 bg-red-600 rounded" style="font-size: 0.75rem; padding: 0.2rem 0.6rem; background: #d32f2f; border-radius: 4px; font-family: 'JetBrains Mono', monospace;">VS</span>
+            <span class="font-bold" style="font-weight: bold;">INGLATERRA ING</span>
+          </div>
+          <div class="text-center text-xs text-slate-400 mt-4" style="text-align: center; font-size: 0.75rem; color: #8a94a6; margin-top: 1rem; font-family: 'JetBrains Mono', monospace;">
+            FECHA 15 • ESTADIO MERCEDES-BENZ DE ATLANTA
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER / MODOS DE LECTURA (Unidad 1 y compatibilidades) -->
+  <footer class="station station-footer" style="background: #08090c; padding: 4rem 2.5rem; border-top: 1px solid rgba(255, 255, 255, 0.08);">
+    <p>GEOMUNDO Z © 2026. Todos los derechos reservados.</p>
+    <p style="font-size: 0.8rem; color: #8a94a6; max-width: 600px; margin: 1rem auto 0 auto;">
+      Desarrollado bajo los estándares de compatibilidad responsiva, uso semántico de maquetación avanzada con SASS/LESS, y animaciones de hardware acelerado.
+    </p>
+    
+    <!-- Selectores de Universo de lectura (Modo Oscuro, Claro, Alto Contraste) -->
+    <div class="universe-toggle reading-modes">
+      <button data-universe="dark">Vista Nocturna</button>
+      <button data-universe="light">Vista Impresa</button>
+      <button data-universe="contrast">Alto Contraste</button>
+    </div>
+  </footer>
+
+  <!-- Botón interactivo para modo diagnóstico de Grid/Flexbox -->
+  <button class="diagnostic-toggle" aria-label="Activar modo diagnóstico de maquetación">
+    Ver Maqueta Grid/Flexbox
+  </button>
+
+  <!-- Lógica Javascript -->
+  <script src="js/scroll-progress.js"></script>
+</body>
+</html>

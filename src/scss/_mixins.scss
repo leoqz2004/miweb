@@ -1,0 +1,105 @@
+// ============================================================
+// _mixins.scss
+// Mixins de SASS adaptados al estilo periodístico GEOMUNDO Z.
+// ============================================================
+
+@use 'sass:math';
+
+// --- Mixin: centrado flexible (Flexbox) ---
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+// --- Mixin: responsive breakpoint (para diseño responsivo) ---
+@mixin respond($breakpoint) {
+  @if $breakpoint == mobile {
+    @media (max-width: $bp-mobile) { @content; }
+  } @else if $breakpoint == tablet {
+    @media (max-width: $bp-tablet) { @content; }
+  } @else if $breakpoint == desktop {
+    @media (max-width: $bp-desktop) { @content; }
+  } @else {
+    @warn "Breakpoint `#{$breakpoint}` no reconocido.";
+  }
+}
+
+// --- Mixin: superficie tipo "panel de noticia" con estética de prensa premium ---
+@mixin panel-surface($accent: $nebula-violet) {
+  background: linear-gradient(180deg, rgba($space-navy-alt, 0.95), rgba($space-navy, 0.98));
+  border-top: 3px solid $accent; // Línea de acento superior clásica de periódicos
+  border-left: 1px solid rgba($white, 0.05);
+  border-right: 1px solid rgba($white, 0.05);
+  border-bottom: 1px solid rgba($white, 0.05);
+  border-radius: $radius-sm;
+  box-shadow: $shadow-panel;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+// --- Mixin: botón editorial clásico ---
+@mixin cosmic-button($bg: $nebula-violet, $fg: $white) {
+  display: inline-flex;
+  align-items: center;
+  gap: $space-1;
+  padding: 0.75rem 1.5rem;
+  background: $bg;
+  color: $fg;
+  border: none;
+  border-radius: $radius-sm;
+  font-family: $font-body;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  letter-spacing: 0.05em;
+  cursor: pointer;
+  transition: transform $transition-fast, box-shadow $transition-fast, background $transition-fast;
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba($bg, 0.3);
+  }
+  &:active {
+    transform: translateY(0);
+  }
+}
+
+// Compatibilidad de alias para el llamado de botones en main.scss
+@mixin press-button($bg: $press-red, $fg: $white) {
+  @include cosmic-button($bg, $fg);
+}
+
+// --- Función: aclar/oscurecer con control fino (math module) ---
+@function tone($color, $percent) {
+  @return mix($white, $color, math.div($percent, 100%) * 100%);
+}
+
+// --- @each: genera clases utilitarias de acento en lote ---
+$accents: (
+  'violet': $nebula-violet,
+  'pink':   $nebula-pink,
+  'rust':   $asteroid-rust,
+  'gold':   $star-gold
+);
+
+@mixin generate-accent-classes {
+  @each $name, $color in $accents {
+    .text-#{$name} { color: $color; }
+    .bg-#{$name}   { background-color: $color; }
+    .border-#{$name} { border-color: $color; }
+  }
+}
+
+// --- @for: genera retardos para las animaciones editoriales ---
+@mixin staggered-stars($count: 24) {
+  @for $i from 1 through $count {
+    .star:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.12}s;
+      left: math.percentage(math.div(($i * 29) % 100, 100));
+      top: math.percentage(math.div(($i * 47) % 100, 100));
+    }
+  }
+}

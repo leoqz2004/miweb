@@ -1,0 +1,66 @@
+// ============================================================
+// _variables.scss
+// Tema: "GEOMUNDO Z" — Portal de Noticias Geopolíticas y Globales
+// tokens de diseño adaptados para un estilo de prensa oscura profesional.
+// ============================================================
+
+// --- Paleta de Prensa Oscura (Colores Editoriales) ---
+$space-black:     #08090c;   // "Ink Black": fondo profundo periodístico
+$space-navy:      #0e1118;   // "Editorial Panel": fondo secundario
+$space-navy-alt:  #151a24;   // "Elevated Paper": paneles de noticias
+$nebula-violet:   #2b82c9;   // "Geopolitical Cyan": acento de Geopolítica (anterior violet)
+$nebula-pink:     #d32f2f;   // "Crimson Editorial": acento de Alertas y Breaking News (anterior pink)
+$asteroid-rust:   #e06c35;   // "FIFA Amber": acento cálido para Mundial 2026 (anterior rust)
+$star-gold:       #bfa15f;   // "Gold Byline": tono de oro elegante para firmas, fechas y subheadline
+$text-light:      #f5f6f8;   // "Paper White": lectura perfecta sobre fondo oscuro
+$text-muted:      #8a94a6;   // "Lead Muted": texto descriptivo grisáceo editorial
+$white:           #ffffff;
+
+// --- Colores extra heredados de main.scss para asegurar compatibilidad de variables ---
+$ink-black:       $space-black;
+$ink-panel:       $space-navy;
+$ink-panel-alt:   $space-navy-alt;
+$gold-byline:     $star-gold;
+$press-red:       $nebula-pink;
+$tech-teal:       #00b4d8;   // Celeste tecnológico para la sección TECH
+$fifa-rust:       $asteroid-rust;
+$geo-violet:      $nebula-violet;
+
+// --- Tipografía Editorial Profesional ---
+// Cambiamos a fuentes con apariencia de prensa clásica y moderna combinada
+$font-display: 'Georgia', 'Playfair Display', serif; // Para grandes titulares editoriales
+$font-body:    'Inter', 'Segoe UI', sans-serif;       // Para lectura de noticias sin fatiga
+$font-mono:    'JetBrains Mono', 'Courier New', monospace;
+
+$fs-hero:    clamp(2.5rem, 5.5vw, 4.8rem);
+$fs-h2:      clamp(1.8rem, 3.5vw, 2.6rem);
+$fs-h3:      clamp(1.1rem, 2vw, 1.4rem);
+$fs-body:    1rem;
+$fs-small:   0.82rem;
+
+// --- Espaciado (escala) ---
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2.5rem;
+$space-5: 4rem;
+$space-6: 6rem;
+
+// --- Breakpoints ---
+$bp-mobile:  480px;
+$bp-tablet:  768px;
+$bp-desktop: 1100px;
+
+// --- Bordes y sombras Editoriales ---
+$radius-sm: 2px;  // Bordes más rectos estilo periódico formal
+$radius-md: 4px;
+$radius-lg: 6px;
+
+$shadow-panel: 0 4px 20px rgba(0, 0, 0, 0.6);
+$shadow-glow-violet: 0 0 25px rgba($nebula-violet, 0.25);
+$shadow-glow-gold: 0 0 15px rgba($star-gold, 0.2);
+
+// --- Transiciones ---
+$transition-fast:  0.2s ease;
+$transition-base:  0.4s cubic-bezier(0.22, 1, 0.36, 1);
+$transition-slow:  0.9s cubic-bezier(0.22, 1, 0.36, 1);
