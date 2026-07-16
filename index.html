@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>GEOMUNDO Z · Proyecto Final CSS Avanzado</title>
+
+  <!-- Frameworks -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos compilados -->
+  <link rel="stylesheet" href="dist/main.css">
+  <link rel="stylesheet" href="dist/asteroides.css">
+
+</head>
+<body>
+
+  <!-- Barra de progreso -->
+  <div class="fuel-bar" aria-hidden="true">
+    <div class="fuel-fill"></div>
+    <div class="fuel-ship">📰</div>
+  </div>
+
+  <!-- ===== NAVBAR CORREGIDA ===== -->
+  <!-- ===== NAVBAR ===== -->
+<header class="custom-navbar">
+  <div class="brand">GEOMUNDO <span>Z</span></div>
+  <button class="nav-toggle" aria-label="Abrir menú" aria-expanded="false">☰</button>
+  <nav class="nav-links">
+    <a href="#hero">PORTADA</a>
+    <a href="#tech">TECNOLOGÍA</a>
+    <a href="#geopolitica">GEOPOLÍTICA</a>
+    <a href="#fifa">MUNDIAL 2026</a>
+    <a href="#opinion">OPINIÓN</a>
+    <a href="#economia">ECONOMÍA</a>
+    <a href="#tailwind">TAILWIND</a>
+    <span class="nav-divider">|</span>
+    <a href="bootstrap-demo.html">BOOTSTRAP</a>
+    <a href="tailwind.html">TAILWIND+</a>
+    <a href="materialize.html">MATERIALIZE</a>
+    <a href="animations.html">ANIMACIONES</a>
+  </nav>
+</header>
+
+  <main>
+    <!-- ===== SECCIÓN HERO ===== -->
+    <section id="hero" class="station station-hero">
+      <div class="masthead-date">Edición Global • Arequipa, 2026</div>
+      <h1> NOTICIAS GLOBALES <span>Z</span></h1>
+      <p class="subtitle">Análisis profundo sobre movimientos geopolíticos, IA y el Mundial 2026.</p>
+      <div class="live-counter">ACTUALIZACIÓN EN VIVO</div>
+      <a href="#tech" class="cta">Leer Edición del Día</a>
+    </section>
+
+    <!-- ===== TECNOLOGÍA (Grid) ===== -->
+    <section id="tech" class="station station-tech">
+      <div class="eyebrow">Tecnología & Innovación</div>
+      <h2>REVOLUCIÓN TECNOLÓGICA Z</h2>
+      <div class="news-grid">
+        <article class="news-card news-card--headline">
+          <img src="./IMAGENES DE PROYECTO/CUANTICA.jpg" alt="Computación Cuántica" onerror="this.src='https://picsum.photos/800/450?random=1'">
+          <div class="news-body">
+            <span class="tag">CUÁNTICA</span>
+            <h3>Nvidia presenta el chip RTX Spark: nuevo procesador con IA local</h3>
+            <p>Nvidia presentó un nuevo chip que incorpora capacidades de IA directamente en computadoras portátiles y de escritorio, en una apuesta para competir con AMD, Intel, Apple y Qualcomm en el mercado de PC impulsadas por IA. El director ejecutivo, Jensen Huang, afirmó que el RTX Spark forma parte del esfuerzo conjunto con Microsoft para “reinventar la PC” para la era de la IA, tras tres años de colaboración. La compañía busca captar la demanda de procesadores de inferencia, que impulsan las respuestas de IA a las consultas de los usuarios.</p>
+          </div>
+        </article>
+        <article class="news-card news-card--second">
+          <img src="./IMAGENES DE PROYECTO/CUANTICA 2.jpg" alt="Modelos de IA" onerror="this.src='https://picsum.photos/800/450?random=2'">
+          <div class="news-body">
+            <span class="tag">INTELIGENCIA ARTIFICIAL</span>
+            <h3>Nvidia señala una demanda de IA más amplia y mantiene su hoja de ruta</h3>
+            <p>Investing.com - NVIDIA comunicó a sus inversores que su hoja de ruta de infraestructura de IA sigue en marcha, que la demanda en todos los segmentos de clientes se mantiene sólida y que las futuras generaciones de sus productos para centros de datos ofrecerán mejoras significativas en eficiencia energética. La actualización llega en un momento en que los inversores siguen de cerca a Nvidia en busca de señales de que el gasto en IA se está extendiendo hacia empresas, clientes soberanos y startups.</p>
+          </div>
+        </article>
+        <article class="news-card news-card--sidebar">
+          <img src="./IMAGENES DE PROYECTO/TECNOLOGIA.jpg" alt="Lamborghini" onerror="this.src='https://picsum.photos/400/600?random=3'">
+          <div class="news-body">
+            <span class="tag">TECNOLOGIA</span>
+            <h3>Lamborghini Temerario 2026: emociones de infarto</h3>
+            <p>Ya sea de pie detrás del motor o sentado al volante, causa una gran primera impresión: un sonido ronco y exótico, y una rápida respuesta del acelerador. La aceleración en el rango medio de revoluciones es sorprendentemente lineal para un motor con tanta potencia. Hay que vigilar el tacómetro con atención en el modo Corsa más agresivo, ya que es necesario accionar las levas fijas para los cambios manuales, y el V8 no pierde potencia en absoluto al acercarse a su límite de revoluciones de cinco dígitos.</p>
+          </div>
+        </article>
+        <article class="news-card news-card--dock">
+          <img src="./IMAGENES DE PROYECTO/TERREMOTO.jpg" alt="Terremotos" onerror="this.src='https://picsum.photos/400/600?random=4'">
+          <div class="news-body">
+            <span class="tag">TERREMOTOS</span>
+            <h3>Terremotos en Venezuela: sube a 1.943 la cifra de muertos</h3>
+            <p>Más de 3.300 rescatistas enviados desde 27 países, coordinados por la ONU, se encuentran en Venezuela para apoyar en las labores de búsqueda de supervivientes bajo los escombros, según informó la presidenta encargada, Delcy Rodríguez. El doble terremoto del miércoles es el más mortífero que ha vivido Venezuela en el último siglo. La región más afectada ha sido La Guaira, una zona costera que ya vivió una tragedia por un deslave en 1999.</p>
+          </div>
+        </article>
+        <article class="news-card news-card--banner">
+          <img src="./IMAGENES DE PROYECTO/GEOPOLITICA.jpg" alt="Geopolítica" onerror="this.src='https://picsum.photos/400/300?random=5'">
+          <div class="news-body">
+            <span class="tag">GEOPOLITICA</span>
+            <h3>Donald Trump dice que EE.UU. cobrará una tasa del 20% para proteger barcos en Ormuz</h3>
+            <p>Trump anunció la reinstauración del bloqueo de los puertos iraníes. Estados Unidos será “el guardián del estrecho de Ormuz” y por ello cobrará “una tasa del 20 % sobre toda la carga transportada, por todos y cada uno de los costos necesarios para hacer el trabajo de proporcionar seguridad y protección a esta sección tan volátil del mundo”.</p>
+            <button class="btn-compare--sass">Ver Análisis de Tratados</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== GEOPOLÍTICA (Nebulosa SASS) ===== -->
+    <section id="geopolitica" class="station-nebula">
+      <div class="star-field"></div>
+      <div class="nebula-content">
+        <div class="eyebrow">Geopolítica Z</div>
+        <h2>EL NUEVO EQUILIBRIO</h2>
+        <p>Análisis de los puntos calientes del planeta con tecnología de radar 3D.</p>
+        <button class="btn-compare--sass">Explorar Mapa</button>
+      </div>
+    </section>
+
+    <!-- ===== MUNDIAL FIFA 2026 ===== -->
+    <section id="fifa" class="station station-fifa">
+      <div class="eyebrow">Deportes Globales</div>
+      <h2>MUNDIAL FIFA 2026</h2>
+      <p class="compare-note">Cobertura con análisis de estadios, selecciones y tecnología holográfica.</p>
+      <div class="compare-grid">
+        <article class="compare-card compare-card--sass">
+          <img src="./IMAGENES DE PROYECTO/DEPORTES.jpg" alt="Estadios" onerror="this.src='https://picsum.photos/400/250?random=10'">
+          <div class="compare-body">
+            <h3>Argentina clasifica a Finales (2–1 contra Inglaterra)</h3>
+            <p>La Albiceleste llegó a esta instancia tras dejar en el camino a Cabo Verde, Egipto y Suiza. Lionel Messi es la principal figura con 8 goles en 6 partidos disputados.</p>
+            <button class="btn-compare--sass">Ver Estadísticas SASS</button>
+          </div>
+        </article>
+        <article class="compare-card compare-card--less">
+          <img src="./IMAGENES DE PROYECTO/CRONOGRAMA.jpg" alt="Fixture" onerror="this.src='https://picsum.photos/400/250?random=11'">
+          <div class="compare-body">
+            <h3>Organización del Calendario</h3>
+            <p>Mañana martes 14 de julio: Francia vs España (15:00, Dallas). Miércoles 15: Inglaterra vs Argentina (15:00, Atlanta).</p>
+            <button class="btn-compare--less">Calendario LESS</button>
+          </div>
+        </article>
+      </div>
+
+      <!-- Tabla -->
+      <div style="margin-top: 3rem; overflow-x: auto;">
+        <h3 style="font-family: var(--font-display); text-align: center; color: var(--star-gold);">
+          TABLA DE MARCADORES Y REUNIONES TÉCNICAS
+        </h3>
+        <table class="custom-news-table" style="width:100%; border-collapse:collapse; background:rgba(26,33,64,0.4); border:1px solid rgba(242,201,76,0.25);">
+          <thead>
+            <tr style="background:rgba(242,201,76,0.1); border-bottom:2px solid #bfa15f;">
+              <th style="padding:1rem; text-align:left; font-family:'JetBrains Mono',monospace;">IMAGEN</th>
+              <th style="padding:1rem; text-align:left; font-family:'JetBrains Mono',monospace;">NOTICIA</th>
+              <th style="padding:1rem; text-align:left; font-family:'JetBrains Mono',monospace;">ESTADO</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+              <td style="padding:1rem; width:180px;">
+                <img src="./IMAGENES DE PROYECTO/VICTORIA.jpg" alt="Argentina" style="width:160px; height:100px; object-fit:cover; border-radius:6px;" onerror="this.src='https://picsum.photos/100/60?random=12'">
+              </td>
+              <td style="padding:1rem;">
+                <strong class="table-news-title">Estadísticas del Grupo A: Argentina lidera expectativas</strong>
+                <span class="table-news-desc">La selección blanquiceleste clasifica invicta tras un partido táctico frente a sus rivales ingleses. El equipo dirigido por Scaloni mostró un juego sólido y efectivo, con Messi como capitán y goleador.</span>
+              </td>
+              <td style="padding:1rem; font-family:'JetBrains Mono',monospace; color:#00b4d8;">CLASIFICADO</td>
+            </tr>
+            <tr style="border-bottom:1px solid rgba(255,255,255,0.08);">
+              <td style="padding:1rem; width:180px;">
+                <img src="./IMAGENES DE PROYECTO/ARBITRAJE.jpg" alt="Arbitraje" style="width:160px; height:100px; object-fit:cover; border-radius:6px;" onerror="this.src='https://picsum.photos/100/60?random=13'">
+              </td>
+              <td style="padding:1rem;">
+                <strong class="table-news-title">Implementación del fuera de juego robótico automatizado</strong>
+                <span class="table-news-desc">Cámaras de alta velocidad instaladas bajo la cubierta de los estadios calcularán el volumen corporal en nanosegundos, ofreciendo precisión milimétrica en las decisiones arbitrales.</span>
+              </td>
+              <td style="padding:1rem; font-family:'JetBrains Mono',monospace; color:#e06c35;">APROBADO</td>
+            </tr>
+            <tr>
+              <td style="padding:1rem; width:180px;">
+                <img src="./IMAGENES DE PROYECTO/ESTADIO.jpg" alt="Estadio" style="width:100px; height:60px; object-fit:cover; border-radius:2px;" onerror="this.src='https://picsum.photos/100/60?random=14'">
+              </td>
+              <td style="padding:1rem;">
+                <strong class="table-news-title">Estadio MetLife albergará la final del Mundial 2026</strong>
+                <span class="table-news-desc">El emblemático estadio de Nueva Jersey será el escenario de la gran final el 18 de julio. Se espera una capacidad de 82,500 espectadores y un despliegue tecnológico sin precedentes.</span>
+              </td>
+              <td style="padding:1rem; font-family:'JetBrains Mono',monospace; color:#2ecc71;">CONFIRMADO</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- ===== RADAR DE ALERTAS ===== -->
+    <section id="geopolitica-radar" class="station station-breaking">
+      <div class="eyebrow">Radar de Alertas Z</div>
+      <h2>MONITOR DE PRENSA EN TIEMPO REAL</h2>
+      <p style="color:#8a94a6; max-width:60ch; margin-bottom:2.5rem;">Efecto radar tridimensional que representa el flujo de cables periodísticos.</p>
+      <div style="display:flex; gap:1rem; justify-content:center; align-items:center; flex-wrap:wrap;">
+        <div style="position:relative; width:200px; height:200px;">
+          <div class="radar-ring"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OPINIÓN ===== -->
+    <section id="opinion" class="station station-opinion">
+      <div class="eyebrow">Firmas Invitadas</div>
+      <h2>COLUMNAS DE OPINIÓN</h2>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:2rem;">
+        <article class="material-card">
+          <img src="./IMAGENES DE PROYECTO/OPINION_1.jpg" alt="Columnista 1" style="height:180px; object-fit:cover;" onerror="this.src='https://picsum.photos/400/250?random=20'">
+          <div style="padding:1.5rem;">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#d32f2f; font-weight:bold; text-transform:uppercase;">GEOPOLÍTICA</span>
+            <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:0.5rem 0; color:#1a1a2e;">¿El fin de la hegemonía del dólar digital?</h3>
+            <p style="font-size:0.85rem; color:#4a4a4a; margin-bottom:1.5rem;">"La unificación de las divisas virtuales de los bancos centrales de Asia acelera la transición hacia un modelo financiero libre de intermediación tradicional."</p>
+            <button class="btn-ripple" style="background:#1a1a2e; color:#fff; border:none; padding:0.6rem 1.2rem; border-radius:4px; cursor:pointer; font-family:'Inter',sans-serif; font-weight:bold;">LEER COLUMNA</button>
+          </div>
+        </article>
+        <article class="material-card">
+          <img src="./IMAGENES DE PROYECTO/OPINION_2.jpg" alt="Columnista 2" style="height:180px; object-fit:cover;" onerror="this.src='https://picsum.photos/400/250?random=21'">
+          <div style="padding:1.5rem;">
+            <span style="font-family:'JetBrains Mono',monospace; font-size:0.75rem; color:#d32f2f; font-weight:bold; text-transform:uppercase;">SOCIEDAD</span>
+            <h3 style="font-family:'Playfair Display',serif; font-size:1.25rem; margin:0.5rem 0; color:#1a1a2e;">El costo ético del algoritmo autónomo</h3>
+            <p style="font-size:0.85rem; color:#4a4a4a; margin-bottom:1.5rem;">"Dejar las decisiones de distribución de recursos en manos de redes neuronales cerradas plantea severos dilemas de equidad que la ley ignora."</p>
+            <button class="btn-ripple" style="background:#1a1a2e; color:#fff; border:none; padding:0.6rem 1.2rem; border-radius:4px; cursor:pointer; font-family:'Inter',sans-serif; font-weight:bold;">LEER COLUMNA</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===== ECONOMÍA (Bootstrap) ===== -->
+    <!-- ===== ECONOMÍA (Bootstrap) ===== -->
+<section id="economia" class="station station-economia">
+  <div class="eyebrow">Finanzas Mundiales</div>
+  <h2 class="section-title text-center text-white mb-5">MERCADOS Y ECONOMÍA Z</h2>
+  
+  <!-- CAMBIO: Usamos el sistema de filas y columnas nativo de Bootstrap 5 -->
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    
+    <!-- CARD 1 -->
+    <div class="col">
+      <!-- Añadimos bg-transparent y text-white para solucionar el color del texto -->
+      <div class="card h-100 bg-transparent text-white border-secondary">
+        <img src="./IMAGENES DE PROYECTO/ECO_INDICES.jpg" class="card-img-top" alt="Índices" onerror="this.src='https://picsum.photos/400/200?random=30'">
+        <div class="card-body">
+          <h5 class="card-title text-warning">Índices Tecnológicos se estabilizan</h5>
+          <p class="card-text text-light">La inyección de capital en infraestructura cuántica genera un repunte del 4.2% en los índices bursátiles de las principales potencias aliadas. El Nasdaq Composite lidera el crecimiento con un 5.1% intermensual.</p>
+        </div>
+        <div class="card-footer bg-transparent border-0 pt-0">
+          <a href="#" class="btn btn-outline-warning w-100">Leer más</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CARD 2 -->
+    <div class="col">
+      <div class="card h-100 bg-transparent text-white border-secondary">
+        <img src="./IMAGENES DE PROYECTO/ECO_COMMODITIES.jpg" class="card-img-top" alt="Materias primas" onerror="this.src='https://picsum.photos/400/200?random=31'">
+        <div class="card-body">
+          <h5 class="card-title text-warning">Metales raros marcan récord de valor</h5>
+          <p class="card-text text-light">La demanda internacional de litio de alta pureza y neodimio para la propulsión eléctrica dispara las cotizaciones de contratos a largo plazo. El precio del litio supera los $80,000 por tonelada.</p>
+        </div>
+        <div class="card-footer bg-transparent border-0 pt-0">
+          <a href="#" class="btn btn-outline-warning w-100">Leer más</a>
+        </div>
+      </div>
+    </div>
+    
+    <!-- CARD 3 -->
+    <div class="col">
+      <div class="card h-100 bg-transparent text-white border-secondary">
+        <img src="./IMAGENES DE PROYECTO/ECO_CRIPTO.jpg" class="card-img-top" alt="Criptomonedas" onerror="this.src='https://picsum.photos/400/200?random=32'">
+        <div class="card-body">
+          <h5 class="card-title text-warning">Bitcoin supera los $100,000 tras anuncio de ETF</h5>
+          <p class="card-text text-light">La aprobación de un ETF de Bitcoin al contado en Estados Unidos impulsa la criptomoneda a máximos históricos. Los inversores institucionales aumentan su exposición al activo digital.</p>
+        </div>
+        <div class="card-footer bg-transparent border-0 pt-0">
+          <a href="#" class="btn btn-outline-warning w-100">Leer más</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+    <!-- ===== TAILWIND CSS ===== -->
+    <section id="tailwind" class="station-tailwind" style="background:#0e1118; padding:4rem 2.5rem; border-top:2px solid var(--color-gold);">
+      <div style="max-width:800px; margin:0 auto; text-align:center;">
+        <span class="eyebrow" style="color:var(--color-gold); font-family:var(--font-mono);">MONITOR TAILWIND CSS</span>
+        <h2 style="font-family:'Playfair Display',serif; color:#fff; margin-bottom:1.5rem; font-size:2.2rem;">Próximos Encuentros de Clasificación</h2>
+        <div class="bg-slate-850-premium rounded-lg shadow-2xl border border-amber-500/30 p-6">
+          <div class="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div class="flex items-center gap-3">
+              <img src="./IMAGENES DE PROYECTO/ARGENTINA.jpg" alt="Argentina" class="w-16 h-16 rounded-full object-cover border-2 border-white/20" onerror="this.src='https://picsum.photos/64/64?random=40'">
+              <span class="font-bold text-white text-lg">ARGENTINA</span>
+            </div>
+            <div class="bg-red-600 text-white font-mono font-bold px-4 py-1 rounded-full text-sm shadow-lg shadow-red-600/30">VS</div>
+            <div class="flex items-center gap-3">
+              <span class="font-bold text-white text-lg">ESPAÑA</span>
+              <img src="./IMAGENES DE PROYECTO/ESPAÑA.jpg" alt="España" class="w-16 h-16 rounded-full object-cover border-2 border-white/20" onerror="this.src='https://picsum.photos/64/64?random=41'">
+            </div>
+          </div>
+          <div class="mt-4 text-center text-amber-300 text-sm font-mono border-t border-white/10 pt-3">
+            FECHA 15 • ESTADIO METLIFE • 14:00 PM EN AMERICA TVGO
+          </div>
+        </div>
+        <p class="mt-4 text-sm text-gray-400">Esta sección utiliza clases de <strong class="text-amber-400">Tailwind CSS</strong> (utility-first).</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="station-footer">
+    <div class="footer-legal">
+      <p>GEOMUNDO Z · Proyecto Final CSS Avanzado · Semana 18</p>
+      <p>Integrantes: [Nombres] · Sustentación: [Fecha]</p>
+      <div class="universe-toggle">
+        <button data-universe="dark" class="btn-universe">🌙 Oscuro</button>
+        <button data-universe="light" class="btn-universe">☀️ Claro</button>
+        <button data-universe="contrast" class="btn-universe">⚫ Alto Contraste</button>
+      </div>
+      <p style="margin-top:1rem; font-size:0.7rem; color:#666;">
+        <a href="bootstrap-demo.html">Bootstrap</a> ·
+        <a href="tailwind.html">Tailwind+</a> ·
+        <a href="materialize.html">Materialize</a> ·
+        <a href="animations.html">Animaciones</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- ===== BOTÓN DIAGNÓSTICO ===== -->
+  <button class="diagnostic-toggle" aria-label="Mostrar maquetación">Ver Maqueta</button>
+
+  <!-- ===== SCRIPTS ===== -->
+  <script src="js/scroll-progress.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    // Toggle menú hamburguesa
+    document.querySelector('.nav-toggle').addEventListener('click', function() {
+      const nav = document.querySelector('.nav-links');
+      const expanded = this.getAttribute('aria-expanded') === 'true' ? false : true;
+      this.setAttribute('aria-expanded', expanded);
+      nav.classList.toggle('open');
+    });
+
+    // Modos de lectura
+    document.querySelectorAll('.btn-universe').forEach(btn => {
+      btn.addEventListener('click', function() {
+        const mode = this.dataset.universe;
+        document.body.className = '';
+        if (mode === 'light') document.body.classList.add('universe-light');
+        else if (mode === 'contrast') document.body.classList.add('universe-contrast');
+      });
+    });
+
+    // Diagnóstico
+    document.querySelector('.diagnostic-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('diagnostic-mode');
+      this.textContent = document.body.classList.contains('diagnostic-mode') ? 'Ocultar Maqueta' : 'Ver Maqueta';
+    });
+
+    // Efecto Ripple
+    document.querySelectorAll('.btn-ripple').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        const circle = document.createElement('span');
+        const rect = this.getBoundingClientRect();
+        const size = Math.max(rect.width, rect.height);
+        circle.style.width = circle.style.height = size + 'px';
+        circle.style.left = (e.clientX - rect.left - size/2) + 'px';
+        circle.style.top = (e.clientY - rect.top - size/2) + 'px';
+        circle.classList.add('ripple-circle');
+        this.appendChild(circle);
+        setTimeout(() => circle.remove(), 600);
+      });
+    });
+  </script>
+</body>
+</html>
