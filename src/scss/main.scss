@@ -1,0 +1,213 @@
+// ============================================================
+// main.scss – Punto de entrada SASS
+// Importa todos los partials
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+@use 'nebulosa';
+@use 'componentes';
+
+// --- Generar clases de acento (usando @each) ---
+@include generate-accent-classes;
+
+// --- Estilos globales ---
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  background-color: $space-black;
+  color: $text-light;
+  font-family: $font-body;
+}
+
+body {
+  overflow-x: hidden;
+  line-height: 1.6;
+  background: $space-black;
+  @include transition(background, 0.4s);
+}
+
+// --- Barra de progreso (Fuel Bar) ---
+.fuel-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: rgba($white, 0.1);
+  z-index: 1000;
+
+  .fuel-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, $nebula-pink, $star-gold);
+    @include transition(width, 0.1s, linear);
+  }
+
+  .fuel-ship {
+    position: absolute;
+    top: -6px;
+    right: 0;
+    font-size: 1.1rem;
+    transform: translateX(50%);
+    pointer-events: none;
+  }
+}
+
+// --- NAVBAR (Flexbox) ---
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 2.5rem;
+  background: rgba($space-black, 0.9);
+  border-bottom: 1px solid rgba($white, 0.08);
+  position: sticky;
+  top: 4px;
+  z-index: 900;
+  backdrop-filter: blur(12px);
+
+  .brand {
+    font-family: $font-display;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 0.05em;
+    color: $white;
+    span { color: $star-gold; font-style: italic; }
+  }
+
+  .nav-links {
+    display: flex;
+    gap: $space-2;
+    a {
+      color: $text-muted;
+      text-decoration: none;
+      font-size: $fs-small;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      @include transition(color, 0.2s);
+      &:hover { color: $star-gold; }
+    }
+  }
+
+  .nav-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: $white;
+    font-size: 1.8rem;
+    cursor: pointer;
+  }
+
+  @media (max-width: $bp-tablet) {
+    padding: 1rem 1.5rem;
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      background: $space-navy;
+      padding: $space-3;
+      border-bottom: 1px solid rgba($white, 0.1);
+    }
+    .nav-links.open { display: flex; }
+    .nav-toggle { display: block; }
+  }
+}
+
+// --- HERO (Portada) ---
+.station-hero {
+  min-height: 80vh;
+  @include flex-center(column);
+  text-align: center;
+  padding: $space-5 $space-3;
+  background: radial-gradient(circle at center, rgba($space-navy-alt, 0.4) 0%, $space-black 100%);
+
+  .masthead-date {
+    font-family: $font-mono;
+    font-size: $fs-small;
+    letter-spacing: 0.25em;
+    color: $star-gold;
+    text-transform: uppercase;
+  }
+
+  h1 {
+    font-family: $font-display;
+    font-size: $fs-hero;
+    line-height: 1.1;
+    max-width: 15ch;
+    span {
+      display: block;
+      color: transparent;
+      background: linear-gradient(135deg, $text-light 30%, $star-gold 100%);
+      background-clip: text;
+      -webkit-background-clip: text;
+    }
+  }
+
+  .subtitle {
+    font-size: 1.15rem;
+    color: $text-muted;
+    max-width: 60ch;
+  }
+
+  .cta {
+    @include button-variant($star-gold, $space-black);
+    text-decoration: none;
+  }
+}
+
+// --- Grid de noticias (CSS Grid) ---
+.station-tech {
+  padding: $space-5 $space-3;
+  .news-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: $space-3;
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// --- Sección FIFA (comparativa) ---
+.station-fifa {
+  padding: $space-5 $space-3;
+  .compare-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: $space-3;
+    @media (max-width: $bp-tablet) {
+      grid-template-columns: 1fr;
+    }
+  }
+}
+
+// --- Modos de lectura (Universos) ---
+body.universe-light {
+  background: #f4f1ea;
+  color: #1a1a2e;
+  .navbar { background: rgba(#f4f1ea, 0.9); }
+  .news-card, .compare-card { background: #fff; border-color: #ddd; }
+}
+
+body.universe-contrast {
+  background: #000;
+  color: #fff;
+  * { border-color: #fff !important; background: #000 !important; }
+  a, button { color: #ff0 !important; border-color: #ff0 !important; }
+}
+
+// --- Reducción de movimiento (accesibilidad) ---
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+}

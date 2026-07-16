@@ -1,0 +1,76 @@
+// ============================================================
+// _nebulosa.scss – Sección Geopolítica con efectos SASS
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+.station-nebula {
+  position: relative;
+  min-height: 50vh;
+  padding: $space-5 $space-3;
+  background: radial-gradient(circle at center, #111521 0%, $space-black 100%);
+  overflow: hidden;
+  @include flex-center(column);
+
+  .star-field {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    z-index: 1;
+
+    .star {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background-color: $star-gold;
+      border-radius: 50%;
+      opacity: 0.3;
+      animation: pulse-star 3s infinite ease-in-out;
+    }
+
+    // Usamos el mixin @for para distribuir las estrellas
+    @include staggered-stars(12);
+  }
+
+  .nebula-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    text-align: center;
+    background: rgba($space-navy, 0.85);
+    padding: $space-4;
+    border-radius: $radius-md;
+    border: 1px solid rgba($star-gold, 0.15);
+    backdrop-filter: blur(10px);
+    @include box-shadow(0, 0, 30px, rgba($star-gold, 0.1));
+
+    .eyebrow {
+      color: $star-gold;
+      font-family: $font-mono;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      font-size: $fs-small;
+    }
+
+    h2 {
+      font-family: $font-display;
+      font-size: $fs-h2;
+      margin: $space-2 0;
+    }
+
+    p {
+      color: $text-muted;
+      margin-bottom: $space-3;
+    }
+
+    .btn-compare--sass {
+      @include button-variant($star-gold, $space-black);
+    }
+  }
+}
+
+@keyframes pulse-star {
+  0%, 100% { opacity: 0.1; transform: scale(0.8); }
+  50% { opacity: 0.9; transform: scale(1.4); box-shadow: 0 0 10px rgba($star-gold, 0.8); }
+}

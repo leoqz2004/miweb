@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animaciones CSS · GEOMUNDO Z</title>
+  <!-- Enlace a los estilos compilados (para aprovechar variables y mixins) -->
+  <link rel="stylesheet" href="dist/main.css">
+  <link rel="stylesheet" href="dist/asteroides.css">
+  <!-- Estilos específicos para esta demo -->
+  <style>
+    body {
+      background: #0b0e1a;
+      color: #e8e9f3;
+      font-family: 'Inter', sans-serif;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+    h1 {
+      font-family: 'Playfair Display', serif;
+      color: #f2c94c;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+    .subtitle {
+      color: #b0b7c9;
+      margin-bottom: 3rem;
+      text-align: center;
+    }
+    .demo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      max-width: 1200px;
+      width: 100%;
+      margin-bottom: 3rem;
+    }
+    .demo-card {
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .demo-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.5);
+    }
+    .demo-box {
+      width: 120px;
+      height: 120px;
+      margin: 0 auto 1rem;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: bold;
+      font-size: 1rem;
+      color: #fff;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.27, 1.55);
+      background: linear-gradient(135deg, #6c5ce7, #a29bfe);
+    }
+    .demo-box:hover {
+      transform: scale(1.1) rotate(4deg) skewX(-2deg);
+      background: linear-gradient(135deg, #fd79a8, #e17055);
+      box-shadow: 0 12px 30px rgba(0,0,0,0.4);
+    }
+    /* Ejemplos de animaciones */
+    @keyframes float {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+      100% { transform: translateY(0px); }
+    }
+    @keyframes pulse {
+      0% { transform: scale(1); }
+      50% { transform: scale(1.08); }
+      100% { transform: scale(1); }
+    }
+    @keyframes slideIn {
+      from { transform: translateX(-100px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+    @keyframes rotate3d {
+      0% { transform: rotateY(0deg); }
+      100% { transform: rotateY(360deg); }
+    }
+    @keyframes bounce {
+      0%, 100% { transform: translateY(0); }
+      40% { transform: translateY(-30px); }
+      60% { transform: translateY(-15px); }
+    }
+    .anim-float {
+      animation: float 3s ease-in-out infinite;
+      background: linear-gradient(135deg, #00b894, #00cec9);
+    }
+    .anim-pulse {
+      animation: pulse 2s ease-in-out infinite;
+      background: linear-gradient(135deg, #d63031, #e17055);
+    }
+    .anim-slide {
+      animation: slideIn 1s ease-out forwards;
+      background: linear-gradient(135deg, #0984e3, #74b9ff);
+    }
+    .anim-rotate3d {
+      animation: rotate3d 4s linear infinite;
+      background: linear-gradient(135deg, #6c5ce7, #fd79a8);
+      transform-style: preserve-3d;
+    }
+    .anim-bounce {
+      animation: bounce 1.5s ease infinite;
+      background: linear-gradient(135deg, #fdcb6e, #e17055);
+    }
+    .transform-3d {
+      transform: perspective(500px) rotateX(30deg) rotateY(20deg);
+      transition: transform 0.8s ease;
+    }
+    .transform-3d:hover {
+      transform: perspective(500px) rotateX(0deg) rotateY(0deg) scale(1.1);
+    }
+    .back-link {
+      margin-top: 2rem;
+      color: #f2c94c;
+      text-decoration: none;
+      border: 1px solid #f2c94c40;
+      padding: 0.6rem 1.5rem;
+      border-radius: 30px;
+      transition: background 0.3s;
+    }
+    .back-link:hover {
+      background: #f2c94c20;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>🎯 Animaciones, Transiciones y Transformaciones</h1>
+  <p class="subtitle">Pasa el cursor sobre los cuadros o mira las animaciones automáticas.</p>
+
+  <div class="demo-grid">
+
+    <div class="demo-card">
+      <div class="demo-box anim-float">Float</div>
+      <p><strong>@keyframes float</strong></p>
+      <p style="color:#b0b7c9; font-size:0.85rem;">Animación continua con desplazamiento vertical.</p>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-box anim-pulse">Pulse</div>
+      <p><strong>@keyframes pulse</strong></p>
+      <p style="color:#b0b7c9; font-size:0.85rem;">Efecto de latido suave.</p>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-box anim-slide">Slide</div>
+      <p><strong>@keyframes slideIn</strong></p>
+      <p style="color:#b0b7c9; font-size:0.85rem;">Entrada desde la izquierda con opacidad.</p>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-box anim-rotate3d">3D Rotate</div>
+      <p><strong>@keyframes rotate3d</strong></p>
+      <p style="color:#b0b7c9; font-size:0.85rem;">Rotación en 3D continua.</p>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-box anim-bounce">Bounce</div>
+      <p><strong>@keyframes bounce</strong></p>
+      <p style="color:#b0b7c9; font-size:0.85rem;">Rebote suave estilo pelota.</p>
+    </div>
+
+    <div class="demo-card">
+      <div class="demo-box transform-3d">Hover 3D</div>
+      <p><strong>Transform + Transition</strong></p>
+      <p style="color:#b0b7c9; font-size:0.85rem;">Al hacer hover, cambia perspectiva y escala.</p>
+    </div>
+
+  </div>
+
+  <!-- Ejemplo adicional de transición en texto -->
+  <div style="max-width:600px; text-align:center; margin-bottom:2rem;">
+    <p style="transition: all 0.5s ease; padding:1rem; border:1px solid #f2c94c30; border-radius:8px;">
+      <span style="display:inline-block; transition: transform 0.3s, color 0.3s; cursor:pointer;" onmouseenter="this.style.transform='scale(1.2)'; this.style.color='#f2c94c';" onmouseleave="this.style.transform='scale(1)'; this.style.color='inherit';">Pasa el cursor sobre mí</span>
+    </p>
+  </div>
+
+  <a href="index.html" class="back-link">← Volver a GEOMUNDO Z</a>
+
+</body>
+</html>

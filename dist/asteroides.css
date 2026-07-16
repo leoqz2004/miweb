@@ -1,0 +1,238 @@
+/* ============================================================
+   asteroides.css – Compilado desde LESS (src/less/asteroides.less)
+   Incluye: variables, mixins, animaciones, componentes y alertas
+   ============================================================ */
+
+/* --- Variables LESS (compiladas) --- */
+:root {
+  --less-primary: #2b82c9;
+  --less-secondary: #d32f2f;
+  --less-accent: #bfa15f;
+  --less-dark: #08090c;
+  --less-panel: #0e1118;
+  --less-panel-alt: #151a24;
+  --less-text: #f5f6f8;
+  --less-muted: #8a94a6;
+  --less-font-serif: 'Playfair Display', Georgia, serif;
+  --less-font-sans: 'Inter', 'Segoe UI', sans-serif;
+  --less-font-mono: 'JetBrains Mono', monospace;
+  --less-fs-hero: clamp(2.5rem, 5.5vw, 4.8rem);
+  --less-fs-h2: clamp(1.8rem, 3.5vw, 2.6rem);
+  --less-fs-h3: clamp(1.1rem, 2vw, 1.4rem);
+  --less-fs-body: 1rem;
+  --less-fs-small: 0.82rem;
+  --less-space-1: 0.5rem;
+  --less-space-2: 1rem;
+  --less-space-3: 1.5rem;
+  --less-space-4: 2.5rem;
+  --less-space-5: 4rem;
+  --less-radius-sm: 2px;
+  --less-radius-md: 4px;
+  --less-shadow-panel: 0 4px 20px rgba(0,0,0,0.6);
+}
+
+/* ==========================================================================
+   ESTILOS BASE (heredados de tu asteroides.css original)
+   ========================================================================== */
+.btn-compare--less {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.85rem 1.8rem;
+  background: #e8734a;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+.btn-compare--less:hover {
+  transform: translateY(-3px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(232, 115, 74, 0.5);
+}
+.btn-compare--less:active {
+  transform: translateY(0) scale(0.98);
+}
+
+.compare-card--less {
+  background: #161c37;
+  border: 1px solid rgba(232, 115, 74, 0.35);
+  border-radius: 20px;
+  padding: 1.5rem;
+}
+.compare-card--less h3 {
+  color: #e8734a;
+}
+.compare-card--less:hover {
+  border-color: #ec9370;
+}
+
+/* ==========================================================================
+   NUEVAS REGLAS DESDE LOS PARTIALS LESS
+   ========================================================================== */
+
+/* --- Animaciones (desde _animaciones.less) --- */
+.anim-float {
+  animation: float 3s ease-in-out infinite;
+}
+.anim-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+.anim-slide {
+  animation: slideIn 0.8s ease-out forwards;
+}
+.anim-rotate3d {
+  animation: rotate3d 6s linear infinite;
+}
+.anim-bounce {
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.05); }
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes rotate3d {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  100% { transform: rotateY(360deg) rotateX(360deg); }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
+}
+
+/* --- Componentes (desde _componentes.less) --- */
+.news-card {
+  background: linear-gradient(180deg, rgba(21, 26, 36, 0.95), rgba(14, 17, 24, 0.98));
+  border-top: 3px solid #bfa15f;
+  border-radius: 2px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.6);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.22,1,0.36,1), border-color 0.3s;
+}
+.news-card:hover {
+  transform: translateY(-6px);
+  border-color: #2b82c9;
+}
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  filter: grayscale(20%) contrast(110%);
+  transition: transform 0.6s;
+}
+.news-card:hover img {
+  transform: scale(1.05);
+}
+.news-card .news-body {
+  padding: 1rem;
+}
+.news-card .news-body .tag {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #bfa15f;
+  letter-spacing: 0.1em;
+}
+.news-card .news-body h3 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 1.3rem;
+  margin: 0.5rem 0;
+}
+.news-card .news-body p {
+  color: #8a94a6;
+  font-size: 0.9rem;
+}
+
+.btn-compare--less {
+  background: #d32f2f;
+  color: #fff;
+  border: 1px solid #ef5350;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-compare--less:hover {
+  background: #b71c1c;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(211, 47, 47, 0.3);
+}
+
+.btn-compare--sass {
+  background: #2b82c9;
+  color: #fff;
+  border: 1px solid #4a9bdb;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.btn-compare--sass:hover {
+  background: #1f639a;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(43, 130, 201, 0.3);
+}
+
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: rgba(14, 17, 24, 0.6);
+  border: 1px solid rgba(191, 161, 95, 0.25);
+}
+.custom-table th {
+  background: rgba(191, 161, 95, 0.2);
+  color: #fff;
+  font-family: 'JetBrains Mono', monospace;
+  padding: 0.75rem 1rem;
+  border-bottom: 2px solid #bfa15f;
+}
+.custom-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.05);
+  color: #f5f6f8;
+}
+.custom-table tr:hover {
+  background: rgba(255,255,255,0.03);
+}
+
+/* --- Estación de alertas (Breaking) --- */
+.station-breaking {
+  position: relative;
+  padding: 4rem 1.5rem;
+  background: #08090c;
+  text-align: center;
+}
+.station-breaking .radar-ring {
+  width: 200px;
+  height: 200px;
+  border: 2px solid #d32f2f;
+  border-radius: 50%;
+  animation: warp 4s linear infinite;
+  transform-style: preserve-3d;
+}
+@keyframes warp {
+  0%   { transform: rotateX(45deg) rotateY(0deg) scale(0.5); opacity: 1; }
+  100% { transform: rotateX(45deg) rotateY(360deg) scale(1.5); opacity: 0; }
+}
+
+/* --- Media Queries desde LESS (operaciones) --- */
+@media (max-width: 768px) {
+  .station-breaking {
+    padding: 1.5rem 1rem;
+  }
+  .news-card img {
+    height: 150px;
+  }
+}
+
+/* ==========================================================================
+   FIN DE asteroides.css
+   ========================================================================== */

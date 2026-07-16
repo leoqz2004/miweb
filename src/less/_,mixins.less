@@ -1,0 +1,56 @@
+// ============================================================
+// _mixins.less – Mixins reutilizables para LESS
+// ============================================================
+
+// --- Mixin para centrado con flex ---
+.flex-center(@direction: row, @gap: 0) {
+  display: flex;
+  flex-direction: @direction;
+  align-items: center;
+  justify-content: center;
+  gap: @gap;
+}
+
+// --- Mixin para sombras con parámetros ---
+.box-shadow(@x:0, @y:4px, @blur:8px, @color:rgba(0,0,0,0.2)) {
+  box-shadow: @x @y @blur @color;
+}
+
+// --- Mixin para transiciones suaves ---
+.transition(@prop: all, @time: 0.3s, @ease: ease) {
+  transition: @prop @time @ease;
+}
+
+// --- Mixin para botones con hover y transformación ---
+.button-variant(@bg, @text: #fff) {
+  background: @bg;
+  color: @text;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: @radius-sm;
+  font-family: @font-sans;
+  font-weight: 600;
+  cursor: pointer;
+  .transition();
+  &:hover {
+    background: darken(@bg, 10%);
+    transform: translateY(-2px) scale(1.02);
+    .box-shadow(0, 8px, 20px, rgba(@bg, 0.3));
+  }
+}
+
+// --- Mixin para superficies de paneles (estilo periódico) ---
+.panel-surface(@accent: @color-primary) {
+  background: linear-gradient(180deg, rgba(@color-panel-alt, 0.95), rgba(@color-panel, 0.98));
+  border-top: 3px solid @accent;
+  border-radius: @radius-sm;
+  .box-shadow();
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+// --- Función para aclarar/oscurecer (operación) ---
+.tone(@color, @percent) {
+  @result: mix(#fff, @color, @percent);
+  @result; 
+}

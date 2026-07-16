@@ -1,0 +1,1330 @@
+/* ============================================================
+   main.css – Compilado desde SASS (src/scss/main.scss)
+   Incluye: variables, mixins, nebulosa, componentes y utilidades
+   ============================================================ */
+
+/* --- Variables SASS (compiladas) --- */
+:root {
+  --space-black: #08090c;
+  --space-navy: #0e1118;
+  --space-navy-alt: #151a24;
+  --nebula-violet: #2b82c9;
+  --nebula-pink: #d32f2f;
+  --asteroid-rust: #e06c35;
+  --star-gold: #bfa15f;
+  --text-light: #f5f6f8;
+  --text-muted: #8a94a6;
+  --white: #ffffff;
+  --font-display: 'Georgia', 'Playfair Display', serif;
+  --font-body: 'Inter', 'Segoe UI', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --fs-hero: clamp(2.5rem, 5.5vw, 4.8rem);
+  --fs-h2: clamp(1.8rem, 3.5vw, 2.6rem);
+  --fs-h3: clamp(1.1rem, 2vw, 1.4rem);
+  --fs-body: 1rem;
+  --fs-small: 0.82rem;
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.5rem;
+  --space-4: 2.5rem;
+  --space-5: 4rem;
+  --space-6: 6rem;
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1100px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --shadow-panel: 0 4px 20px rgba(0, 0, 0, 0.6);
+  --shadow-glow: 0 0 25px rgba(43, 130, 201, 0.25);
+  --transition-fast: 0.2s ease;
+  --transition-base: 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* --- Clases de acento generadas con @each (SASS) --- */
+.text-violet { color: #2b82c9; }
+.bg-violet   { background-color: #2b82c9; }
+.border-violet { border-color: #2b82c9; }
+.text-pink { color: #d32f2f; }
+.bg-pink   { background-color: #d32f2f; }
+.border-pink { border-color: #d32f2f; }
+.text-rust { color: #e06c35; }
+.bg-rust   { background-color: #e06c35; }
+.border-rust { border-color: #e06c35; }
+.text-gold { color: #bfa15f; }
+.bg-gold   { background-color: #bfa15f; }
+.border-gold { border-color: #bfa15f; }
+
+/* ==========================================================================
+   ESTILOS BASE (heredados de tu main.css original)
+   ========================================================================== */
+:root {
+  --color-bg-dark: #0b0e1a;
+  --color-bg-card: linear-gradient(
+    to bottom,
+    #214F89 0%,
+    #163A65 25%,
+    #0D223D 55%,
+    #07111F 80%,
+    #000000 100%
+  );
+  --color-border: rgba(255,215,70,.35);
+  --color-gold: #f2c94c;
+  --color-purple: #a855f7;
+  --color-pink: #ec4899;
+  --color-text-light: #e8e9f3;
+  --color-text-muted: #8b90b3;
+  --color-dark-card-text: #1a1a2e;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+}
+
+body {
+  background-color: var(--color-bg-dark);
+  color: var(--color-text-light);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.station, .station-tailwind {
+  background: rgba(7, 8, 11, 0.6) !important;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  border-bottom: 1px solid rgba(212, 175, 55, 0.15) !important;
+}
+
+.bg-slate-850-premium {
+  background: rgba(20, 24, 33, 0.75) !important;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  border: 1px solid rgba(242, 201, 76, 0.25) !important;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+}
+
+.station {
+  padding: 5rem 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.station-hero h1 {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--color-text-title);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.station-hero h1 span {
+  font-family: var(--font-sans);
+  color: var(--color-gold-premium);
+  text-shadow: 0 0 15px rgba(242, 201, 76, 0.2);
+}
+
+.eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-gold);
+  margin-bottom: 0.75rem;
+  text-align: center;
+}
+
+.red-eyebrow {
+  color: var(--color-pink);
+}
+
+.section-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  text-align: center;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* ---------- Barra de progreso (Fuel Bar) ---------- */
+.fuel-bar {
+  position: fixed;
+  right: 1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 6px;
+  height: 60vh;
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 999px;
+  z-index: 50;
+  will-change: transform;
+}
+
+.fuel-bar .fuel-fill {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  border-radius: 999px;
+  background: linear-gradient(180deg, var(--color-gold), var(--color-purple));
+  height: 0%;
+  transition: height 0.1s linear;
+}
+
+.fuel-bar .fuel-ship {
+  position: absolute;
+  left: 50%;
+  bottom: 0%;
+  transform: translate(-50%, 50%);
+  font-size: 1.1rem;
+  transition: bottom 0.1s linear;
+}
+
+@media (max-width: 768px) {
+  .fuel-bar { display: none; }
+}
+
+/* ==========================================================================
+   NAVBAR RESPONSIVA (Unidad 1 y Flexbox)
+   ========================================================================== */
+.navbar {
+  position: fixed;
+  top: 0; 
+  left: 0; 
+  right: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 1.2rem 2.5rem;
+  background: rgba(11, 14, 26, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.navbar .brand {
+  font-family: var(--font-editorial);
+  font-weight: 700;
+  color: var(--color-text-light);
+  font-size: 1.4rem;
+  letter-spacing: 0.05em;
+}
+
+.navbar .brand span {
+  color: var(--color-gold);
+}
+
+.navbar .nav-links {
+  display: flex;
+  gap: 1.8rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar .nav-links a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  transition: color 0.2s ease;
+}
+
+.navbar .nav-links a:hover { 
+  color: var(--color-gold); 
+}
+
+.navbar .nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--color-text-light);
+  font-size: 1.6rem;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    padding: 1rem 1.5rem;
+  }
+  .navbar .nav-links {
+    position: fixed;
+    inset: 60px 0 auto 0;
+    flex-direction: column;
+    background: #12172b;
+    padding: 2rem;
+    align-items: center;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translateY(-130%);
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+  .navbar .nav-links.open { 
+    transform: translateY(0); 
+  }
+  .navbar .nav-toggle { 
+    display: block; 
+  }
+}
+
+/* ==========================================================================
+   ESTACIÓN 0: PORTADA / HERO
+   ========================================================================== */
+.station-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  text-align: center;
+  position: relative;
+  min-height: 90vh;
+  padding-top: 80px;
+}
+
+.masthead-date {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-gold);
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.station-hero h1 {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  background: linear-gradient(90deg, var(--color-gold), var(--color-pink), var(--color-purple));
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: rise 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.station-hero h1 span {
+  font-family: var(--font-sans);
+}
+
+.station-hero .subtitle {
+  font-family: var(--font-sans);
+  font-weight: 300;
+  font-size: clamp(1rem, 1.5vw, 1.3rem);
+  color: var(--color-text-muted);
+  max-width: 60ch;
+  animation: rise 1s 0.15s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.station-hero .live-counter {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--color-pink);
+  border: 1px solid var(--color-pink);
+  padding: 0.3rem 0.8rem;
+  border-radius: 999px;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.station-hero .cta {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.95rem 2.2rem;
+  background: var(--color-gold);
+  color: var(--color-bg-dark);
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+.station-hero .cta:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(242, 201, 76, 0.35);
+}
+
+.station-hero .cta:active { 
+  transform: translateY(0); 
+}
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; }
+  50%      { opacity: 1; }
+}
+
+/* ==========================================================================
+   ESTACIÓN 2: SECCIÓN TECNOLOGÍA (CSS Grid Layout)
+   ========================================================================== */
+.station-tech {
+  background: radial-gradient(circle at 10% 10%, rgba(26, 33, 64, 0.2), transparent 50%);
+}
+
+/* ============================================================
+   CORRECCIÓN DE GRID – ASEGURA QUE TODAS LAS TARJETAS SE VEAN
+   ============================================================ */
+
+/* Forzar que el grid tenga altura automática y no oculte contenido */
+.news-grid {
+  display: grid !important;
+  gap: 1.8rem !important;
+  grid-template-columns: repeat(4, 1fr) !important;
+  grid-template-areas:
+    "headline headline second second"
+    "headline headline sidebar dock"
+    "banner banner sidebar dock" !important;
+}
+
+/* Asegurar que cada tarjeta ocupe su área y sea visible */
+.news-card {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 400px !important;
+  opacity: 1 !important;
+  visibility: visible !important;
+}
+
+/* Para móviles, sobrescribir a una columna */
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr !important;
+    grid-template-areas: none !important;
+  }
+  .news-card {
+    grid-area: auto !important;
+  }
+}
+@media (max-width: 1024px) {
+  .news-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas:
+      "headline headline"
+      "second sidebar"
+      "dock banner";
+  }
+}
+
+@media (max-width: 768px) {
+  .news-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas: none !important;
+  }
+  .news-card {
+    background: radial-gradient(circle at 50% -20%, rgba(255,255,255,.14), transparent 45%), linear-gradient(to bottom, #2d5f9e 0%, #214b82 22%, #173964 55%, #102848 80%, #081a31 100%);
+    border: 1px solid rgba(120,170,255,.25);
+  }
+}
+
+.news-card {
+  background: var(--color-bg-card);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.25s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.news-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 35px rgba(168, 85, 247, 0.25);
+  border-color: rgba(168, 85, 247, 0.6);
+}
+
+.news-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.news-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.news-body .tag {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--color-gold);
+  margin-bottom: 0.5rem;
+  display: inline-block;
+  letter-spacing: 0.1em;
+}
+
+.news-body h3 {
+  font-family: var(--font-editorial);
+  font-size: 1.3rem;
+  font-weight: 700;
+  line-height: 1.3;
+  margin-bottom: 0.8rem;
+  color: var(--color-text-light);
+}
+
+.news-body p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  margin-bottom: 1rem;
+}
+
+.news-card--headline { grid-area: headline; }
+.news-card--second { grid-area: second; }
+.news-card--sidebar { grid-area: sidebar; }
+.news-card--dock { grid-area: dock; }
+.news-card--banner { grid-area: banner; }
+
+.news-card--headline img {
+  height: 500px;
+}
+.news-card--headline .news-body h3 {
+  font-size: 1.8rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 3: NEBULA SASS (efectos y estrellas)
+   ========================================================================== */
+.station-nebula {
+  position: relative;
+  overflow: hidden;
+  background: radial-gradient(circle at center, #161233 0%, var(--color-bg-dark) 100%);
+  border-top: 1px solid rgba(168, 85, 247, 0.2);
+  border-bottom: 1px solid rgba(168, 85, 247, 0.2);
+  padding: 6rem 2.5rem;
+}
+
+.station-nebula::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 30% 20%, rgba(236, 72, 153, 0.15), transparent 60%),
+              radial-gradient(circle at 70% 80%, rgba(168, 85, 247, 0.2), transparent 55%);
+  z-index: 0;
+}
+
+.station-nebula .nebula-content {
+  position: relative;
+  z-index: 1;
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.station-nebula .nebula-content h2 {
+  font-family: var(--font-editorial);
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  color: var(--color-gold);
+  margin-bottom: 1rem;
+}
+
+.station-nebula .nebula-content p {
+  font-size: 1.1rem;
+  color: var(--color-text-muted);
+}
+
+.station-nebula .star-field {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.station-nebula .star-field .star {
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  background: #d6b3fb;
+  border-radius: 50%;
+  animation: twinkle 3s ease-in-out infinite;
+}
+
+/* Estrellas generadas con @for (SASS) - 12 posiciones */
+.star-field .star:nth-child(1)  { left: 37%; top: 53%; animation-delay: 0.12s; }
+.star-field .star:nth-child(2)  { left: 74%; top: 6%;  animation-delay: 0.24s; }
+.star-field .star:nth-child(3)  { left: 11%; top: 59%; animation-delay: 0.36s; }
+.star-field .star:nth-child(4)  { left: 48%; top: 12%; animation-delay: 0.48s; }
+.star-field .star:nth-child(5)  { left: 85%; top: 65%; animation-delay: 0.60s; }
+.star-field .star:nth-child(6)  { left: 22%; top: 18%; animation-delay: 0.72s; }
+.star-field .star:nth-child(7)  { left: 59%; top: 71%; animation-delay: 0.84s; }
+.star-field .star:nth-child(8)  { left: 96%; top: 24%; animation-delay: 0.96s; }
+.star-field .star:nth-child(9)  { left: 33%; top: 77%; animation-delay: 1.08s; }
+.star-field .star:nth-child(10) { left: 70%; top: 30%; animation-delay: 1.20s; }
+.star-field .star:nth-child(11) { left: 7%;  top: 83%; animation-delay: 1.32s; }
+.star-field .star:nth-child(12) { left: 44%; top: 36%; animation-delay: 1.44s; }
+
+@keyframes twinkle {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  50%      { opacity: 1;    transform: scale(1.3); }
+}
+
+/* ==========================================================================
+   ESTACIÓN 4: MUNDIAL FIFA 2026
+   ========================================================================== */
+.station-fifa {
+  background: radial-gradient(circle at bottom, rgba(26, 33, 64, 0.15) 0%, transparent 80%);
+}
+
+.station-fifa .compare-note {
+  text-align: center;
+  color: var(--color-text-muted);
+  margin-bottom: 2.5rem;
+}
+
+.compare-grid {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 4rem;
+}
+
+.compare-card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(232, 115, 74, 0.35);
+  border-radius: 16px;
+  overflow: hidden;
+  max-width: 380px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.compare-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.compare-body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  text-align: left;
+}
+
+.compare-card h3 {
+  font-family: var(--font-editorial);
+  font-size: 1.4rem;
+  color: #e8734a;
+  margin-bottom: 1rem;
+}
+
+.compare-body p {
+  color: var(--color-text-muted);
+  font-size: 0.9rem;
+  margin-bottom: 1.5rem;
+}
+
+.btn-compare--sass, .btn-compare--less {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  text-align: center;
+}
+
+/* Estilos específicos de SASS (sobrescriben) */
+.btn-compare--sass {
+  background: var(--color-purple);
+  color: #fff;
+}
+.btn-compare--sass:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(168, 85, 247, 0.4);
+}
+
+.btn-compare--less {
+  background: #1d365d;
+  color: #5bc0be;
+  border: 1px solid rgba(91, 192, 190, 0.3);
+}
+.btn-compare--less:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(91, 192, 190, 0.2);
+}
+
+/* --- Tabla de marcadores --- */
+.custom-news-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  background: rgba(212, 175, 55, 0.08) !important;
+}
+
+.custom-news-table th {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  color: #ffffff;
+  background: rgba(242, 201, 76, 0.25) !important;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  border-bottom: 2px solid var(--color-gold);
+}
+
+.custom-news-table td {
+  padding: 1rem;
+  vertical-align: middle;
+  color: #fff6d6 !important;
+  border-bottom: 1px solid rgba(242, 201, 76, 0.3) !important;
+}
+
+.custom-news-table strong {
+  color: var(--color-gold) !important;
+}
+
+/* ==========================================================================
+   ESTACIÓN 5: RADAR / ALERTAS (3D)
+   ========================================================================== */
+.station-breaking {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  perspective: 1200px;
+  text-align: center;
+  padding: 6rem 2.5rem;
+}
+
+.radar-ring {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--color-pink);
+  transform-style: preserve-3d;
+  animation: warp 4s linear infinite;
+  will-change: transform;
+}
+
+.radar-container::before {
+  content: '';
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  background: var(--color-pink);
+  border-radius: 50%;
+  box-shadow: 0 0 20px var(--color-pink);
+  z-index: 2;
+}
+
+@keyframes warp {
+  0%   { transform: rotateX(45deg) rotateY(0deg) scale(0.5); opacity: 1; }
+  100% { transform: rotateX(45deg) rotateY(360deg) scale(1.5); opacity: 0; }
+}
+
+/* ==========================================================================
+   ESTACIÓN 6: OPINIÓN (Material Design)
+   ========================================================================== */
+.station-opinion {
+  background: radial-gradient(circle at top right, rgba(168, 85, 247, 0.05) 0%, transparent 70%);
+}
+
+.material-card {
+  background: #ffffff;
+  color: var(--color-dark-card-text);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+  transition: box-shadow 0.25s ease, transform 0.25s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.material-card:hover {
+  box-shadow: 0 15px 30px rgba(0,0,0,0.25);
+  transform: translateY(-5px);
+}
+
+.material-card .btn-ripple {
+  margin-top: auto;
+  align-self: flex-start;
+  padding: 0.8rem 1.8rem;
+  background: var(--color-dark-card-text);
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  font-family: var(--font-sans);
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.material-card .ripple-circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.4);
+  transform: scale(0);
+  animation: ripple 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple { 
+  to { transform: scale(3); opacity: 0; } 
+}
+
+/* ==========================================================================
+   ESTACIÓN 7: ECONOMÍA (Bootstrap)
+   ========================================================================== */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  justify-content: center;
+}
+
+.col-md-6 {
+  position: relative;
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+@media (max-width: 768px) {
+  .col-md-6 {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.station-economia .card {
+  background: var(--color-bg-card);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* ==========================================================================
+   ESTACIÓN 8: TAILWIND (sección dentro del index)
+   ========================================================================== */
+.station-tailwind {
+  padding: 4rem 2.5rem;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.bg-slate-850-premium {
+  position: relative;
+  overflow: hidden;
+  padding: 2.8rem 2rem;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #0a2d62 0%, #114b9b 30%, #0b1f46 65%, #08152f 100%);
+  border: 2px solid rgba(255,215,80,.45);
+  box-shadow: 0 20px 45px rgba(0,0,0,.45), inset 0 0 0 1px rgba(255,255,255,.05);
+}
+
+.bg-slate-850-premium::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: radial-gradient(circle at 18% 45%, rgba(120,205,255,.25), transparent 32%),
+              radial-gradient(circle at 82% 45%, rgba(255,60,60,.18), transparent 34%),
+              radial-gradient(circle at center, rgba(255,215,0,.08), transparent 45%);
+  z-index: 0;
+}
+
+.bg-slate-850-premium .match-divider {
+  height: 2px;
+  margin: 2rem 0;
+  background: linear-gradient(90deg, transparent, #79d3ff, #ffd54a, #d62839, transparent);
+}
+
+/* ==========================================================================
+   FOOTER, MODOS Y UTILIDADES
+   ========================================================================== */
+.station-footer {
+  text-align: center;
+  color: var(--color-text-muted);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 4rem 2.5rem;
+}
+
+body.universe-contrast {
+  background: #000000 !important;
+  color: #ffffff !important;
+}
+body.universe-contrast * {
+  text-shadow: none !important;
+  box-shadow: none !important;
+  background-image: none !important;
+}
+body.universe-contrast .navbar,
+body.universe-contrast .news-card,
+body.universe-contrast .material-card,
+body.universe-contrast .table-container-wrapper,
+body.universe-contrast .bg-slate-800,
+body.universe-contrast .tailwind-wrapper {
+  background: #000000 !important;
+  border: 2px solid #ffffff !important;
+  color: #ffffff !important;
+}
+body.universe-contrast a,
+body.universe-contrast button {
+  color: #ffff00 !important;
+  border: 2px solid #ffff00 !important;
+  background: #000 !important;
+}
+
+body.universe-light {
+  background: #f4f1ea !important;
+  color: #1a1a2e !important;
+}
+body.universe-light .navbar {
+  background: rgba(244, 241, 234, 0.85) !important;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15) !important;
+}
+body.universe-light .navbar .brand,
+body.universe-light .navbar .nav-links a {
+  color: #1a1a2e !important;
+}
+body.universe-light .news-card,
+body.universe-light .table-container-wrapper,
+body.universe-light .card {
+  background: #ffffff !important;
+  border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+}
+body.universe-light .news-body h3,
+body.universe-light .news-body p,
+body.universe-light .table-news-title,
+body.universe-light .table-news-desc,
+body.universe-light .custom-news-table th {
+  color: #1a1a2e !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .navbar, .fuel-bar { background: rgba(11, 14, 26, 0.95); }
+}
+
+body.diagnostic-mode .news-grid,
+body.diagnostic-mode .navbar,
+body.diagnostic-mode .station-hero,
+body.diagnostic-mode .compare-grid,
+body.diagnostic-mode .row,
+body.diagnostic-mode .flex-match-row {
+  outline: 2px dashed var(--color-gold) !important;
+}
+body.diagnostic-mode .news-card,
+body.diagnostic-mode .compare-card,
+body.diagnostic-mode .col-md-6,
+body.diagnostic-mode .nav-links {
+  outline: 1px dashed var(--color-pink) !important;
+}
+
+.diagnostic-toggle {
+  position: fixed;
+  left: 1.2rem;
+  bottom: 1.2rem;
+  z-index: 60;
+  background: #12172b;
+  color: #e8e9f3;
+  border: 1px solid rgba(255,255,255,0.2);
+  border-radius: 999px;
+  padding: 0.6rem 1.2rem;
+  font-size: 0.75rem;
+  cursor: pointer;
+  font-family: var(--font-mono);
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+.diagnostic-toggle:hover {
+  background: var(--color-purple);
+  transform: scale(1.05);
+}
+
+/* --- Clases de animación adicionales (desde SASS) --- */
+.anim-float {
+  animation: float 3s ease-in-out infinite;
+}
+.anim-pulse {
+  animation: pulse 2s ease-in-out infinite;
+}
+.anim-slide {
+  animation: slideIn 0.8s ease-out forwards;
+}
+.anim-rotate3d {
+  animation: rotate3d 6s linear infinite;
+}
+.anim-bounce {
+  animation: bounce 2s ease infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-20px) rotate(2deg); }
+  100% { transform: translateY(0px) rotate(0deg); }
+}
+@keyframes slideIn {
+  from { transform: translateX(-100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+@keyframes rotate3d {
+  0% { transform: rotateY(0deg) rotateX(0deg); }
+  100% { transform: rotateY(360deg) rotateX(360deg); }
+}
+@keyframes bounce {
+  0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+  40% { transform: translateY(-30px); }
+  60% { transform: translateY(-15px); }
+}
+
+/* ============================================================
+   CORRECCIONES FINALES – NAVBAR, TABLAS RESPONSIVE, CONTRASTE
+   ============================================================ */
+
+/* --- NAVBAR: más contraste y sin elementos extraños --- */
+.custom-navbar {
+  background: rgba(11, 14, 26, 0.98) !important;
+  border-bottom: 1px solid rgba(191, 161, 95, 0.3) !important;
+}
+
+.custom-navbar .nav-links a {
+  color: #d0d5e0 !important; /* gris claro, no plomo */
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.custom-navbar .nav-links a:hover,
+.custom-navbar .nav-links a.active {
+  color: #f2c94c !important; /* dorado */
+  border-bottom-color: #f2c94c !important;
+}
+
+/* Eliminar cualquier borde o fondo rosa */
+.station-hero .live-counter {
+  border-color: #bfa15f !important;
+  color: #bfa15f !important;
+}
+.radar-ring {
+  border-color: #bfa15f !important;
+}
+.btn-compare--less {
+  background: #2b82c9 !important;
+  border-color: #2b82c9 !important;
+}
+.btn-compare--less:hover {
+  background: #1f639a !important;
+}
+
+/* --- TABLA RESPONSIVE: scroll horizontal y todas las filas visibles --- */
+@media (max-width: 768px) {
+  .custom-news-table {
+    display: block;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  .custom-news-table thead,
+  .custom-news-table tbody,
+  .custom-news-table tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+  .custom-news-table td,
+  .custom-news-table th {
+    padding: 0.5rem !important;
+    font-size: 0.75rem;
+  }
+  .custom-news-table .table-news-desc {
+    display: none; /* ocultar descripción larga en móvil para ahorrar espacio */
+  }
+  .custom-news-table .table-news-title {
+    font-size: 0.8rem;
+  }
+  .custom-news-table td:first-child {
+    width: 60px;
+  }
+  .custom-news-table td:last-child {
+    width: 80px;
+  }
+}
+
+/* --- NAVBAR MÓVIL: más legible --- */
+@media (max-width: 768px) {
+  .custom-navbar .nav-links {
+    background: #0b0e1a !important;
+    border-bottom: 2px solid #bfa15f !important;
+  }
+  .custom-navbar .nav-links a {
+    color: #f5f6f8 !important;
+    font-size: 0.9rem;
+    padding: 0.6rem 0;
+  }
+  .custom-navbar .nav-links a:hover {
+    color: #f2c94c !important;
+  }
+}
+
+/* ============================================================
+   SOLUCIÓN DEFINITIVA – ELIMINAR ROSADO Y MEJORAR MÓVIL
+   ============================================================ */
+
+/* 1. Forzar que el navbar .custom-navbar sea el que se usa */
+.custom-navbar {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  background: rgba(11, 14, 26, 0.98) !important;
+  border-bottom: 1px solid rgba(191, 161, 95, 0.3) !important;
+  padding: 0.4rem 1.5rem !important;
+  min-height: 56px !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  z-index: 1000 !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+}
+
+.custom-navbar .brand {
+  font-size: 1.2rem !important;
+  color: #f5f6f8 !important;
+  flex-shrink: 0 !important;
+}
+.custom-navbar .brand span {
+  color: #f2c94c !important;
+}
+
+.custom-navbar .nav-links {
+  display: flex !important;
+  gap: 0.5rem !important;
+  flex-wrap: nowrap !important;
+  overflow-x: auto !important;
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+  align-items: center !important;
+}
+.custom-navbar .nav-links::-webkit-scrollbar {
+  display: none !important;
+}
+
+.custom-navbar .nav-links a {
+  color: #d0d5e0 !important;
+  font-size: 0.6rem !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.08em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap !important;
+  padding: 0.3rem 0.4rem !important;
+  border-bottom: 2px solid transparent !important;
+  text-decoration: none !important;
+}
+.custom-navbar .nav-links a:hover,
+.custom-navbar .nav-links a.active {
+  color: #f2c94c !important;
+  border-bottom-color: #f2c94c !important;
+}
+
+.custom-navbar .nav-divider {
+  color: #4a5568 !important;
+  font-size: 0.7rem !important;
+  padding: 0 0.2rem !important;
+}
+
+.custom-navbar .nav-toggle {
+  display: none !important;
+  background: none !important;
+  border: none !important;
+  color: #f5f6f8 !important;
+  font-size: 1.6rem !important;
+  cursor: pointer !important;
+  padding: 0.2rem 0.5rem !important;
+}
+
+/* --- Móvil: mostrar toggle y colapsar menú --- */
+@media (max-width: 768px) {
+  .custom-navbar {
+    padding: 0.4rem 1rem !important;
+    flex-wrap: wrap !important;
+    min-height: 56px !important;
+  }
+  .custom-navbar .nav-toggle {
+    display: block !important;
+    order: 2 !important;
+  }
+  .custom-navbar .nav-links {
+    position: fixed !important;
+    top: 56px !important;
+    left: 0 !important;
+    right: 0 !important;
+    flex-direction: column !important;
+    background: #0b0e1a !important;
+    padding: 1.5rem !important;
+    align-items: center !important;
+    border-bottom: 2px solid #bfa15f !important;
+    transform: translateY(-150%) !important;
+    transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1) !important;
+    gap: 0.8rem !important;
+    z-index: 999 !important;
+    overflow-y: auto !important;
+    max-height: 80vh !important;
+    flex-wrap: nowrap !important;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.8) !important;
+  }
+  .custom-navbar .nav-links.open {
+    transform: translateY(0) !important;
+  }
+  .custom-navbar .nav-links a {
+    font-size: 0.9rem !important;
+    border-bottom: none !important;
+    padding: 0.6rem 0 !important;
+    width: 100% !important;
+    text-align: center !important;
+    color: #f5f6f8 !important;
+  }
+  .custom-navbar .nav-links a:hover {
+    border-bottom: 2px solid #f2c94c !important;
+    color: #f2c94c !important;
+  }
+  .custom-navbar .nav-divider {
+    display: none !important;
+  }
+}
+
+/* 2. Eliminar cualquier borde o fondo ROSA */
+.station-hero .live-counter {
+  border-color: #bfa15f !important;
+  color: #bfa15f !important;
+  background: transparent !important;
+}
+.radar-ring {
+  border-color: #bfa15f !important;
+}
+.btn-compare--less {
+  background: #2b82c9 !important;
+  border-color: #2b82c9 !important;
+}
+.btn-compare--less:hover {
+  background: #1f639a !important;
+}
+/* Quitar rosa de bordes de tarjetas que puedan venir de --color-pink */
+.news-card:hover {
+  border-color: #2b82c9 !important;
+  box-shadow: 0 12px 35px rgba(43, 130, 201, 0.25) !important;
+}
+.compare-card {
+  border-color: rgba(191, 161, 95, 0.25) !important;
+}
+.compare-card:hover {
+  border-color: #bfa15f !important;
+}
+
+/* 3. Asegurar que el contenido se vea en móvil */
+@media (max-width: 768px) {
+  body {
+    padding-top: 70px !important; /* espacio para navbar fija */
+  }
+  .station {
+    padding: 2rem 1rem !important;
+  }
+  .station-hero {
+    min-height: 60vh !important;
+    padding-top: 40px !important;
+  }
+  .station-hero h1 {
+    font-size: 2.5rem !important;
+  }
+  .news-card--headline img {
+    height: 200px !important;
+  }
+  .news-card--headline .news-body h3 {
+    font-size: 1.3rem !important;
+  }
+  .compare-grid {
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+  .compare-card {
+    max-width: 100% !important;
+  }
+  .material-card {
+    margin-bottom: 1.5rem !important;
+  }
+  .bootstrap-card-deck .card {
+    flex: 1 1 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+/* 4. Asegurar que el botón de diagnóstico no se superponga */
+.diagnostic-toggle {
+  bottom: 1rem !important;
+  left: 1rem !important;
+  z-index: 999 !important;
+}
+
+header.custom-navbar nav.nav-links {
+  background: transparent !important;
+  box-shadow: none !important;
+  width: auto !important;
+  height: auto !important;
+}
+
+.custom-news-table .table-thumb {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+@media (max-width: 768px) {
+  .custom-news-table .table-thumb {
+    width: 80px;
+    height: 55px;
+  }
+}

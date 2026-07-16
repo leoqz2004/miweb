@@ -1,0 +1,50 @@
+// ============================================================
+// _variables.scss – Tokens de diseño para SASS
+// ============================================================
+
+// Colores
+$space-black:     #08090c;
+$space-navy:      #0e1118;
+$space-navy-alt:  #151a24;
+$nebula-violet:   #2b82c9;
+$nebula-pink:     #d32f2f;
+$asteroid-rust:   #e06c35;
+$star-gold:       #bfa15f;
+$text-light:      #f5f6f8;
+$text-muted:      #8a94a6;
+$white:           #ffffff;
+
+// Tipografía
+$font-display: 'Georgia', 'Playfair Display', serif;
+$font-body:    'Inter', 'Segoe UI', sans-serif;
+$font-mono:    'JetBrains Mono', monospace;
+
+// Tamaños
+$fs-hero: clamp(2.5rem, 5.5vw, 4.8rem);
+$fs-h2:   clamp(1.8rem, 3.5vw, 2.6rem);
+$fs-h3:   clamp(1.1rem, 2vw, 1.4rem);
+$fs-body: 1rem;
+$fs-small:0.82rem;
+
+// Espaciado
+$space-1: 0.5rem;
+$space-2: 1rem;
+$space-3: 1.5rem;
+$space-4: 2.5rem;
+$space-5: 4rem;
+$space-6: 6rem;
+
+// Breakpoints
+$bp-mobile: 480px;
+$bp-tablet: 768px;
+$bp-desktop: 1100px;
+
+// Bordes y sombras
+$radius-sm: 2px;
+$radius-md: 4px;
+$shadow-panel: 0 4px 20px rgba(0,0,0,0.6);
+$shadow-glow: 0 0 25px rgba($nebula-violet, 0.25);
+
+// Transiciones
+$transition-fast: 0.2s ease;
+$transition-base: 0.4s cubic-bezier(0.22, 1, 0.36, 1);

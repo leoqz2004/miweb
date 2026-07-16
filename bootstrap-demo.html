@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bootstrap 5 · GEOMUNDO Z</title>
+
+  <!-- Bootstrap 5 (CDN nativo) -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <!-- Font Awesome 6 (gratis) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+  <!-- Google Fonts (coherentes con el proyecto) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ============================================================
+       ESTILOS GLOBALES – TEMA OSCURO CON DORADO
+    ============================================================ */
+    :root {
+      --bg-dark: #0b0e1a;
+      --bg-card: #151a26;
+      --bg-card-hover: #1e2435;
+      --gold: #f2c94c;
+      --gold-dark: #d4a82e;
+      --gold-glow: rgba(242, 201, 76, 0.3);
+      --text-light: #e8e9f3;
+      --text-muted: #8b90b3;
+      --border-gold: rgba(242, 201, 76, 0.2);
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    body {
+      background-color: var(--bg-dark);
+      color: var(--text-light);
+      font-family: var(--font-sans);
+      padding: 2rem 0.5rem;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+    }
+
+    /* ============================================================
+       TIPOGRAFÍA
+    ============================================================ */
+    h1, h2, h3, h4, h5, .display-4 {
+      font-family: var(--font-serif);
+    }
+    .text-gold {
+      color: var(--gold);
+    }
+    .text-muted-gold {
+      color: var(--text-muted);
+    }
+
+    /* ============================================================
+       NAVBAR
+    ============================================================ */
+    .navbar-geo {
+      background: #0f1320;
+      border-bottom: 2px solid var(--border-gold);
+      border-radius: 8px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.5);
+      padding: 0.6rem 1.5rem;
+    }
+    .navbar-geo .navbar-brand {
+      font-family: var(--font-serif);
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--gold);
+    }
+    .navbar-geo .navbar-brand i {
+      margin-right: 0.5rem;
+    }
+    .navbar-geo .navbar-brand span {
+      color: #fff;
+    }
+    .navbar-geo .nav-link {
+      color: var(--text-muted);
+      font-weight: 500;
+      transition: color 0.2s;
+    }
+    .navbar-geo .nav-link:hover,
+    .navbar-geo .nav-link.active {
+      color: var(--gold);
+    }
+    .navbar-geo .navbar-toggler {
+      border-color: var(--border-gold);
+      color: var(--gold);
+    }
+    .navbar-geo .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(242, 201, 76, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    /* ============================================================
+       SECCIONES Y TARJETAS
+    ============================================================ */
+    .section-block {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.04);
+      border-radius: 16px;
+      padding: 2.2rem 1.8rem;
+      margin-bottom: 3rem;
+      transition: border-color 0.3s;
+    }
+    .section-block:hover {
+      border-color: var(--border-gold);
+    }
+    .section-block h2 {
+      font-family: var(--font-serif);
+      color: var(--gold);
+      margin-bottom: 1.8rem;
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+    .section-block h2 i {
+      font-size: 1.6rem;
+      opacity: 0.7;
+    }
+
+    /* Cards personalizadas */
+    .card-geo {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      border-radius: 12px;
+      transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s;
+      height: 100%;
+    }
+    .card-geo:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 35px rgba(0,0,0,0.6);
+      border-color: var(--gold);
+    }
+    .card-geo .card-title {
+      color: var(--gold);
+      font-family: var(--font-serif);
+    }
+    .card-geo .card-text {
+      color: var(--text-muted);
+    }
+
+    /* Botones dorados */
+    .btn-gold {
+      background: var(--gold);
+      color: var(--bg-dark);
+      border: none;
+      font-weight: 600;
+      transition: background 0.2s, transform 0.2s;
+    }
+    .btn-gold:hover {
+      background: var(--gold-dark);
+      color: var(--bg-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px var(--gold-glow);
+    }
+    .btn-outline-gold {
+      color: var(--gold);
+      border-color: var(--gold);
+    }
+    .btn-outline-gold:hover {
+      background: var(--gold);
+      color: var(--bg-dark);
+      box-shadow: 0 6px 20px var(--gold-glow);
+    }
+
+    /* Badges */
+    .badge-geo {
+      background: var(--gold);
+      color: var(--bg-dark);
+      font-weight: 600;
+      padding: 0.4rem 0.8rem;
+      border-radius: 50px;
+    }
+
+    /* ============================================================
+       CARRUSEL
+    ============================================================ */
+    .carousel-geo .carousel-item img {
+      border-radius: 12px;
+      max-height: 400px;
+      object-fit: cover;
+    }
+    .carousel-geo .carousel-caption {
+      background: rgba(0,0,0,0.55);
+      border-radius: 8px;
+      padding: 1rem 1.5rem;
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
+    }
+    .carousel-geo .carousel-caption h5 {
+      font-family: var(--font-serif);
+      color: var(--gold);
+    }
+    .carousel-geo .carousel-control-prev-icon,
+    .carousel-geo .carousel-control-next-icon {
+      background-color: rgba(0,0,0,0.4);
+      border-radius: 50%;
+      padding: 1.2rem;
+    }
+
+    /* ============================================================
+       ACORDEÓN
+    ============================================================ */
+    .accordion-geo .accordion-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-gold);
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    .accordion-geo .accordion-button {
+      background: var(--bg-card);
+      color: var(--gold);
+      font-weight: 600;
+      font-family: var(--font-sans);
+      transition: background 0.2s;
+    }
+    .accordion-geo .accordion-button:not(.collapsed) {
+      background: #1e2435;
+      color: var(--gold);
+      box-shadow: none;
+    }
+    .accordion-geo .accordion-button:focus {
+      box-shadow: 0 0 0 0.25rem var(--gold-glow);
+      border-color: var(--gold);
+    }
+    .accordion-geo .accordion-body {
+      background: #0f1320;
+      color: var(--text-muted);
+      border-top: 1px solid var(--border-gold);
+    }
+
+    /* ============================================================
+       MODAL
+    ============================================================ */
+    .modal-geo .modal-content {
+      background: var(--bg-card);
+      color: var(--text-light);
+      border: 1px solid var(--gold);
+      border-radius: 16px;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.8);
+    }
+    .modal-geo .modal-header {
+      border-bottom: 2px solid var(--border-gold);
+    }
+    .modal-geo .modal-header .modal-title {
+      font-family: var(--font-serif);
+      color: var(--gold);
+    }
+    .modal-geo .modal-footer {
+      border-top: 2px solid var(--border-gold);
+    }
+    .modal-geo .btn-close {
+      filter: invert(1) brightness(1.5);
+    }
+
+    /* ============================================================
+       TABLA DE EJEMPLO (opcional)
+    ============================================================ */
+    .table-geo {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid var(--border-gold);
+    }
+    .table-geo thead {
+      background: #1e2435;
+      color: var(--gold);
+      font-family: var(--font-mono);
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .table-geo tbody tr {
+      transition: background 0.15s;
+    }
+    .table-geo tbody tr:hover {
+      background: rgba(242, 201, 76, 0.05);
+    }
+    .table-geo td, .table-geo th {
+      border-color: var(--border-gold);
+      padding: 0.75rem 1rem;
+    }
+
+    /* ============================================================
+       RESPONSIVE
+    ============================================================ */
+    @media (max-width: 576px) {
+      body { padding: 0.5rem; }
+      .section-block { padding: 1.5rem 1rem; }
+      .display-4 { font-size: 2rem; }
+      .navbar-geo .navbar-brand { font-size: 1.2rem; }
+    }
+
+    /* ============================================================
+       ANIMACIONES SUTILES
+    ============================================================ */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .section-block {
+      animation: fadeInUp 0.6s ease-out both;
+    }
+    .section-block:nth-child(2) { animation-delay: 0.1s; }
+    .section-block:nth-child(3) { animation-delay: 0.2s; }
+    .section-block:nth-child(4) { animation-delay: 0.3s; }
+    .section-block:nth-child(5) { animation-delay: 0.4s; }
+  </style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- ============================================================
+       NAVBAR
+  ============================================================ -->
+  <nav class="navbar navbar-expand-lg navbar-geo mb-5">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">
+        <i class="fas fa-globe-americas"></i>GEOMUNDO <span>Z</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarGeo" aria-controls="navbarGeo" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarGeo">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="#"><i class="fas fa-home me-1"></i>Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-newspaper me-1"></i>Noticias</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-globe me-1"></i>Geopolítica</a></li>
+          <li class="nav-item"><a class="nav-link" href="#"><i class="fas fa-futbol me-1"></i>Mundial</a></li>
+          <li class="nav-item"><a class="nav-link" href="index.html"><i class="fas fa-arrow-left me-1"></i>Volver</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ============================================================
+       TÍTULO PRINCIPAL
+  ============================================================ -->
+  <div class="text-center mb-5">
+    <h1 class="display-4 fw-bold text-gold">
+      <i class="fas fa-cubes me-3"></i>Bootstrap 5 Nativo
+    </h1>
+    <p class="lead text-muted-gold">Componentes, grid y utilidades – todo funcionando con el CDN oficial</p>
+  </div>
+
+  <!-- ============================================================
+       SECCIÓN 1 – GRID + CARDS
+  ============================================================ -->
+  <section class="section-block">
+    <h2><i class="fas fa-th"></i>Grid &amp; Cards</h2>
+    <div class="row g-4">
+      <!-- Card 1 -->
+      <div class="col-md-4">
+        <div class="card card-geo">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class="fas fa-microchip me-2"></i>Tech</h5>
+            <p class="card-text flex-grow-1">Nvidia RTX Spark: nuevo chip con IA local para computadoras personales.</p>
+            <button class="btn btn-gold mt-2" data-bs-toggle="modal" data-bs-target="#modalGeo">
+              <i class="fas fa-eye me-1"></i>Ver más
+            </button>
+          </div>
+        </div>
+      </div>
+      <!-- Card 2 -->
+      <div class="col-md-4">
+        <div class="card card-geo">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class="fas fa-globe-americas me-2"></i>Geopolítica</h5>
+            <p class="card-text flex-grow-1">EE.UU. anuncia tasa del 20% para proteger el estrecho de Ormuz.</p>
+            <a href="#" class="btn btn-outline-gold mt-2">
+              <i class="fas fa-chevron-circle-right me-1"></i>Leer más
+            </a>
+          </div>
+        </div>
+      </div>
+      <!-- Card 3 -->
+      <div class="col-md-4">
+        <div class="card card-geo">
+          <div class="card-body d-flex flex-column">
+            <h5 class="card-title"><i class="fas fa-futbol me-2"></i>Mundial 2026</h5>
+            <p class="card-text flex-grow-1">Argentina y España se enfrentan en las semifinales del Mundial.</p>
+            <div>
+              <span class="badge-geo me-1"><i class="fas fa-star"></i> Destacado</span>
+              <span class="badge bg-info text-dark">Actualizado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 2 – CARRUSEL
+  ============================================================ -->
+  <section class="section-block">
+    <h2><i class="fas fa-images"></i>Carrusel</h2>
+    <div id="carouselGeo" class="carousel slide carousel-geo" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#carouselGeo" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#carouselGeo" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#carouselGeo" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+      <div class="carousel-inner rounded-3">
+        <div class="carousel-item active">
+          <img src="https://picsum.photos/seed/geo1/1200/500" class="d-block w-100" alt="Geopolítica">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Geopolítica</h5>
+            <p>Análisis de los puntos calientes del planeta.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/seed/geo2/1200/500" class="d-block w-100" alt="Tecnología">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Tecnología</h5>
+            <p>Revolución de la IA y computación cuántica.</p>
+          </div>
+        </div>
+        <div class="carousel-item">
+          <img src="https://picsum.photos/seed/geo3/1200/500" class="d-block w-100" alt="Mundial">
+          <div class="carousel-caption d-none d-md-block">
+            <h5>Mundial 2026</h5>
+            <p>Estadios, selecciones y tecnología holográfica.</p>
+          </div>
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carouselGeo" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Anterior</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carouselGeo" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Siguiente</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 3 – ACORDEÓN
+  ============================================================ -->
+  <section class="section-block">
+    <h2><i class="fas fa-list-ul"></i>Acordeón</h2>
+    <div class="accordion accordion-geo" id="accordionGeo">
+      <!-- Ítem 1 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+            <i class="fas fa-newspaper me-2"></i>Noticia destacada #1
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionGeo">
+          <div class="accordion-body">
+            <strong>Terremoto en Venezuela.</strong> Más de 1.900 muertos y 10.000 heridos. Equipos de rescate de 27 países trabajan en la zona bajo la coordinación de la ONU.
+          </div>
+        </div>
+      </div>
+      <!-- Ítem 2 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+            <i class="fas fa-microchip me-2"></i>Noticia destacada #2
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionGeo">
+          <div class="accordion-body">
+            <strong>Nvidia presenta RTX Spark.</strong> Nuevo chip con IA local para computadoras, compitiendo directamente con AMD, Intel, Apple y Qualcomm.
+          </div>
+        </div>
+      </div>
+      <!-- Ítem 3 -->
+      <div class="accordion-item">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+            <i class="fas fa-futbol me-2"></i>Noticia destacada #3
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionGeo">
+          <div class="accordion-body">
+            <strong>Mundial 2026.</strong> Argentina y España se enfrentan en las semifinales. El partido se jugará en el MetLife Stadium de Nueva Jersey.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 4 – TABLA DE EJEMPLO
+  ============================================================ -->
+  <section class="section-block">
+    <h2><i class="fas fa-table"></i>Tabla de datos</h2>
+    <div class="table-responsive">
+      <table class="table table-geo table-hover">
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Sección</th>
+            <th>Título</th>
+            <th>Fecha</th>
+            <th>Estado</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Geopolítica</td>
+            <td>Trump anuncia tasa del 20% en Ormuz</td>
+            <td>2026-07-14</td>
+            <td><span class="badge bg-warning text-dark">Actualizado</span></td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Tecnología</td>
+            <td>Nvidia RTX Spark con IA local</td>
+            <td>2026-07-13</td>
+            <td><span class="badge bg-success">Confirmado</span></td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Deportes</td>
+            <td>Argentina vs España – Semifinal</td>
+            <td>2026-07-12</td>
+            <td><span class="badge bg-danger">En vivo</span></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECCIÓN 5 – BOTONES, BADGES Y ALERTAS
+  ============================================================ -->
+  <section class="section-block">
+    <h2><i class="fas fa-tools"></i>Botones, badges y alertas</h2>
+    <div class="row g-3 align-items-center">
+      <div class="col-md-4">
+        <button class="btn btn-gold w-100 mb-2"><i class="fas fa-thumbs-up me-2"></i>Me gusta</button>
+        <button class="btn btn-outline-gold w-100"><i class="fas fa-download me-2"></i>Descargar</button>
+      </div>
+      <div class="col-md-4">
+        <span class="badge-geo me-2"><i class="fas fa-tag me-1"></i>Destacado</span>
+        <span class="badge bg-info text-dark me-2">Nuevo</span>
+        <span class="badge bg-secondary">Archivado</span>
+        <span class="badge bg-danger">Urgente</span>
+      </div>
+      <div class="col-md-4">
+        <div class="alert alert-warning alert-dismissible fade show mb-0" role="alert">
+          <i class="fas fa-exclamation-triangle me-2"></i>Actualización en vivo.
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       MODAL
+  ============================================================ -->
+  <div class="modal fade modal-geo" id="modalGeo" tabindex="-1" aria-labelledby="modalGeoLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="modalGeoLabel"><i class="fas fa-info-circle me-2"></i>Detalle de noticia</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p>Este es un <strong>modal nativo de Bootstrap 5</strong>. Puedes usarlo para mostrar contenido adicional, como el resumen completo de una noticia o un formulario rápido.</p>
+          <p class="text-muted-gold">Ideal para mantener la interfaz limpia y profesional.</p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          <button type="button" class="btn btn-gold">Guardar cambios</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       BOTÓN DE REGRESO
+  ============================================================ -->
+  <div class="text-center mt-5">
+    <a href="index.html" class="btn btn-gold btn-lg px-5">
+      <i class="fas fa-arrow-left me-2"></i>Volver a GEOMUNDO Z
+    </a>
+  </div>
+
+</div>
+
+<!-- ============================================================
+   SCRIPTS
+============================================================ -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- (Opcional) Inicialización extra si se necesita -->
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+    // Aquí puedes poner cualquier inicialización adicional, si la hubiera
+    console.log('Bootstrap demo cargada correctamente.');
+  });
+</script>
+
+</body>
+</html>

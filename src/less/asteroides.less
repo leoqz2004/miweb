@@ -1,0 +1,41 @@
+// ============================================================
+// asteroides.less – Punto de entrada LESS
+// Importa todos los partials
+// ============================================================
+
+@import "_variables";
+@import "_mixins";
+@import "_animaciones";
+@import "_componentes";
+
+// Estilos específicos de la sección de alertas (Breaking)
+.station-breaking {
+  position: relative;
+  padding: @space-5 @space-3;
+  background: @color-dark;
+  text-align: center;
+
+  .radar-ring {
+    width: 200px;
+    height: 200px;
+    border: 2px solid @color-secondary;
+    border-radius: 50%;
+    animation: warp 4s linear infinite;
+    transform-style: preserve-3d;
+  }
+
+  @keyframes warp {
+    0%   { transform: rotateX(45deg) rotateY(0deg) scale(0.5); opacity: 1; }
+    100% { transform: rotateX(45deg) rotateY(360deg) scale(1.5); opacity: 0; }
+  }
+}
+
+// Uso de operaciones: ajuste de espaciado en móviles
+@media (max-width: @bp-tablet) {
+  .station-breaking {
+    padding: @space-3 @space-2;
+  }
+  .news-card img {
+    height: 150px;
+  }
+}

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demostración Tailwind CSS · GEOMUNDO Z</title>
+  <!-- Tailwind CSS CDN (nativo) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Pequeño ajuste para que el fondo de la página sea más agradable */
+    body {
+      background: #0b0e1a;
+    }
+    .bg-card-tail {
+      background: #1a1e2e;
+    }
+  </style>
+</head>
+<body class="text-gray-200 antialiased">
+
+  <!-- Navbar con Tailwind -->
+  <nav class="bg-[#0f1320] border-b border-amber-500/20 px-6 py-4 flex flex-wrap items-center justify-between">
+    <div class="text-2xl font-serif font-bold text-white">
+      GEOMUNDO <span class="text-amber-400">Z</span>
+    </div>
+    <div class="space-x-4 hidden md:flex">
+      <a href="index.html" class="text-gray-400 hover:text-amber-400 transition">Inicio</a>
+      <a href="#" class="text-gray-400 hover:text-amber-400 transition">Noticias</a>
+      <a href="#" class="text-gray-400 hover:text-amber-400 transition">Geopolítica</a>
+      <a href="#" class="text-gray-400 hover:text-amber-400 transition">Mundial</a>
+    </div>
+    <button class="md:hidden text-white text-2xl">☰</button>
+  </nav>
+
+  <!-- Contenido principal -->
+  <main class="max-w-6xl mx-auto px-4 py-10">
+
+    <h1 class="text-4xl font-serif font-bold text-amber-400 text-center mb-2">Tailwind CSS en Acción</h1>
+    <p class="text-center text-gray-400 mb-10">Componentes utility-first, responsivos y personalizables.</p>
+
+    <!-- Grid de tarjetas -->
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+      <!-- Card 1 -->
+      <div class="bg-card-tail rounded-xl shadow-xl border border-white/10 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div class="h-40 bg-gradient-to-r from-amber-500 to-orange-600 flex items-center justify-center text-4xl">⚡</div>
+        <div class="p-5">
+          <span class="inline-block bg-amber-500/20 text-amber-300 text-xs font-mono px-2 py-1 rounded-full mb-2">RÁPIDO</span>
+          <h3 class="text-xl font-bold text-white">Utilidades directas</h3>
+          <p class="text-gray-400 text-sm mt-1">Escribe estilos en el HTML con clases como <code class="bg-black/30 px-1 rounded">bg-gradient</code>.</p>
+          <button class="mt-4 bg-amber-500 hover:bg-amber-600 text-black font-bold py-2 px-4 rounded-lg transition">Acción</button>
+        </div>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="bg-card-tail rounded-xl shadow-xl border border-white/10 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div class="h-40 bg-gradient-to-r from-pink-500 to-purple-600 flex items-center justify-center text-4xl">🎨</div>
+        <div class="p-5">
+          <span class="inline-block bg-pink-500/20 text-pink-300 text-xs font-mono px-2 py-1 rounded-full mb-2">PERSONALIZABLE</span>
+          <h3 class="text-xl font-bold text-white">Configuración vía tailwind.config</h3>
+          <p class="text-gray-400 text-sm mt-1">Puedes extender colores, fuentes y breakpoints.</p>
+          <button class="mt-4 bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded-lg transition">Ver más</button>
+        </div>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="bg-card-tail rounded-xl shadow-xl border border-white/10 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+        <div class="h-40 bg-gradient-to-r from-green-400 to-emerald-600 flex items-center justify-center text-4xl">📱</div>
+        <div class="p-5">
+          <span class="inline-block bg-green-500/20 text-green-300 text-xs font-mono px-2 py-1 rounded-full mb-2">RESPONSIVO</span>
+          <h3 class="text-xl font-bold text-white">Clases con prefijos</h3>
+          <p class="text-gray-400 text-sm mt-1">Usa <code class="bg-black/30 px-1 rounded">md:flex</code> o <code class="bg-black/30 px-1 rounded">lg:grid</code>.</p>
+          <button class="mt-4 bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded-lg transition">Explorar</button>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Sección de formulario (Tailwind) -->
+    <div class="mt-16 bg-card-tail border border-white/10 rounded-2xl p-8 shadow-2xl">
+      <h2 class="text-2xl font-serif text-amber-400 mb-4">Suscríbete al Boletín</h2>
+      <div class="flex flex-col md:flex-row gap-4">
+        <input type="email" placeholder="tu@email.com" class="flex-1 bg-black/30 border border-white/10 rounded-lg px-4 py-3 text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-amber-400">
+        <button class="bg-amber-500 hover:bg-amber-600 text-black font-bold px-6 py-3 rounded-lg transition shadow-lg shadow-amber-500/20">
+          Suscribirse
+        </button>
+      </div>
+      <p class="text-gray-500 text-sm mt-3">Recibirás noticias destacadas. Puedes darte de baja en cualquier momento.</p>
+    </div>
+
+    <!-- Badge y estado -->
+    <div class="mt-10 flex flex-wrap gap-4 justify-center">
+      <span class="bg-blue-500/20 text-blue-300 px-4 py-2 rounded-full border border-blue-500/30 text-sm font-mono">#GEOPOLÍTICA</span>
+      <span class="bg-amber-500/20 text-amber-300 px-4 py-2 rounded-full border border-amber-500/30 text-sm font-mono">#MUNDIAL2026</span>
+      <span class="bg-green-500/20 text-green-300 px-4 py-2 rounded-full border border-green-500/30 text-sm font-mono">#TECNOLOGÍA</span>
+    </div>
+
+    <!-- Enlace de regreso -->
+    <div class="text-center mt-12">
+      <a href="index.html" class="inline-block bg-amber-500/10 hover:bg-amber-500/20 text-amber-400 border border-amber-400/30 px-6 py-2 rounded-full transition text-sm font-mono">
+        ← Volver a GEOMUNDO Z
+      </a>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <footer class="mt-16 border-t border-white/10 py-6 text-center text-gray-500 text-sm">
+    <p>Demostración de Tailwind CSS – Proyecto Final CSS Avanzado</p>
+  </footer>
+
+</body>
+</html>

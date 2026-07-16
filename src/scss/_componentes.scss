@@ -1,0 +1,90 @@
+// ============================================================
+// _componentes.scss – Componentes reutilizables (SASS)
+// ============================================================
+
+@use 'variables' as *;
+@use 'mixins' as *;
+
+// --- Tarjeta de noticias (versión SASS) ---
+.news-card {
+  @include panel-surface($nebula-violet);
+  overflow: hidden;
+  @include transition(transform, 0.4s, cubic-bezier(0.22,1,0.36,1));
+
+  &:hover {
+    transform: translateY(-6px);
+    border-color: $star-gold;
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    filter: grayscale(20%) contrast(110%);
+    @include transition(transform, 0.6s);
+  }
+  &:hover img {
+    transform: scale(1.05);
+  }
+
+  .news-body {
+    padding: $space-2;
+    .tag {
+      font-family: $font-mono;
+      font-size: $fs-small;
+      font-weight: 700;
+      color: $star-gold;
+      letter-spacing: 0.1em;
+    }
+    h3 {
+      font-family: $font-display;
+      font-size: $fs-h3;
+      margin: 0.5rem 0;
+    }
+    p {
+      color: $text-muted;
+      font-size: $fs-body * 0.9;
+    }
+  }
+}
+
+// --- Tarjetas comparativas (SASS vs LESS) ---
+.compare-card {
+  @include panel-surface($asteroid-rust);
+  overflow: hidden;
+  @include transition(transform, 0.3s);
+
+  &:hover {
+    transform: translateY(-4px);
+  }
+
+  img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+  }
+
+  .compare-body {
+    padding: $space-3;
+    h3 {
+      font-family: $font-display;
+      font-size: $fs-h3;
+      margin-bottom: $space-1;
+    }
+    p {
+      color: $text-muted;
+      font-size: $fs-body * 0.9;
+      margin-bottom: $space-2;
+    }
+  }
+
+  &--sass {
+    border-top-color: $nebula-pink;
+    .btn-compare--sass { @include button-variant($nebula-pink); }
+  }
+
+  &--less {
+    border-top-color: $nebula-violet;
+    .btn-compare--less { @include button-variant($nebula-violet); }
+  }
+}

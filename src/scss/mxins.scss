@@ -1,0 +1,85 @@
+// ============================================================
+// _mixins.scss – Mixins y funciones SASS
+// ============================================================
+
+@use 'sass:math';
+@use 'sass:color';
+
+// --- Mixin para flexbox centrado ---
+@mixin flex-center($direction: row, $gap: 0) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: center;
+  justify-content: center;
+  gap: $gap;
+}
+
+// --- Mixin para sombras ---
+@mixin box-shadow($x:0, $y:4px, $blur:8px, $color:rgba(0,0,0,0.2)) {
+  box-shadow: $x $y $blur $color;
+}
+
+// --- Mixin para transiciones ---
+@mixin transition($prop: all, $time: 0.3s, $ease: ease) {
+  transition: $prop $time $ease;
+}
+
+// --- Mixin para botones ---
+@mixin button-variant($bg, $text: #fff) {
+  background: $bg;
+  color: $text;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: $radius-sm;
+  font-family: $font-body;
+  font-weight: 600;
+  cursor: pointer;
+  @include transition;
+  &:hover {
+    background: darken($bg, 10%);
+    transform: translateY(-2px) scale(1.02);
+    @include box-shadow(0, 8px, 20px, rgba($bg, 0.3));
+  }
+}
+
+// --- Mixin para paneles editoriales ---
+@mixin panel-surface($accent: $nebula-violet) {
+  background: linear-gradient(180deg, rgba($space-navy-alt, 0.95), rgba($space-navy, 0.98));
+  border-top: 3px solid $accent;
+  border-radius: $radius-sm;
+  @include box-shadow;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+// --- Función para ajustar tono (operación) ---
+@function tone($color, $percent) {
+  @return mix($white, $color, $percent);
+}
+
+// --- Mixin @each para generar clases de color ---
+$accents: (
+  'violet': $nebula-violet,
+  'pink':   $nebula-pink,
+  'rust':   $asteroid-rust,
+  'gold':   $star-gold
+);
+
+@mixin generate-accent-classes {
+  @each $name, $color in $accents {
+    .text-#{$name} { color: $color; }
+    .bg-#{$name}   { background-color: $color; }
+    .border-#{$name} { border-color: $color; }
+  }
+}
+
+// --- Mixin @for para estrellas escalonadas ---
+@mixin staggered-stars($count: 12) {
+  @for $i from 1 through $count {
+    .star:nth-child(#{$i}) {
+      animation-delay: #{$i * 0.12}s;
+      left: math.percentage(math.div(($i * 29) % 100, 100));
+      top: math.percentage(math.div(($i * 47) % 100, 100));
+    }
+  }
+}

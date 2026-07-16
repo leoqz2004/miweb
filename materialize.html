@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materialize · GEOMUNDO Z</title>
+  <!-- Materialize CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <!-- Estilos propios para adaptar al tema oscuro -->
+  <style>
+    body {
+      background: #0b0e1a;
+      color: #e8e9f3;
+      padding: 2rem 0;
+    }
+    .container {
+      max-width: 1200px;
+    }
+    /* Personalización de colores para que combine con dorado */
+    .brand-logo {
+      color: #f2c94c !important;
+      font-weight: 700;
+    }
+    .nav-wrapper {
+      background: #0f1320;
+      border-bottom: 2px solid #f2c94c40;
+    }
+    .nav-wrapper a {
+      color: #b0b7c9 !important;
+    }
+    .nav-wrapper a:hover {
+      color: #f2c94c !important;
+    }
+    .card {
+      background: #1a1e2e;
+      border-radius: 8px;
+    }
+    .card .card-title {
+      color: #f2c94c;
+    }
+    .card .card-content {
+      color: #b0b7c9;
+    }
+    .card .card-action a {
+      color: #f2c94c !important;
+    }
+    .btn, .btn-floating {
+      background: #f2c94c;
+      color: #0b0e1a;
+    }
+    .btn:hover, .btn-floating:hover {
+      background: #d4a82e;
+    }
+    .btn-flat {
+      color: #f2c94c;
+    }
+    .tabs .tab a {
+      color: #b0b7c9 !important;
+    }
+    .tabs .tab a:hover {
+      color: #f2c94c !important;
+    }
+    .tabs .tab a.active {
+      color: #f2c94c !important;
+      border-bottom: 2px solid #f2c94c;
+    }
+    .tabs .indicator {
+      background: #f2c94c;
+    }
+    .parallax-container {
+      height: 300px;
+      margin: 2rem 0;
+    }
+    .parallax-container .parallax img {
+      opacity: 0.6;
+    }
+    .section-title {
+      color: #f2c94c;
+      font-size: 2rem;
+      font-weight: 300;
+      margin-bottom: 1.5rem;
+    }
+    .material-icons {
+      vertical-align: middle;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #f2c94c;
+      text-decoration: none;
+    }
+    .back-link:hover {
+      text-decoration: underline;
+    }
+    /* Ajuste para el footer */
+    .page-footer {
+      background: #0f1320;
+      margin-top: 2rem;
+      padding: 1rem 0;
+      border-top: 1px solid #f2c94c20;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar (Materialize) -->
+  <nav class="nav-wrapper">
+    <div class="container">
+      <a href="#" class="brand-logo"><i class="material-icons left">public</i>GEOMUNDO Z</a>
+      <ul id="nav-mobile" class="right hide-on-med-and-down">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="#">Noticias</a></li>
+        <li><a href="#">Geopolítica</a></li>
+        <li><a href="#">Mundial</a></li>
+        <li><a href="index.html"><i class="material-icons left">arrow_back</i>Volver</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <div class="container">
+
+    <h1 class="center-align section-title">Materialize + Material Icons</h1>
+    <p class="flow-text center" style="color:#b0b7c9;">Componentes con diseño Material Design</p>
+
+    <!-- Tabs (Materialize) -->
+    <div class="row">
+      <div class="col s12">
+        <ul class="tabs">
+          <li class="tab col s3"><a href="#tab1" class="active">Geopolítica</a></li>
+          <li class="tab col s3"><a href="#tab2">Tecnología</a></li>
+          <li class="tab col s3"><a href="#tab3">Mundial</a></li>
+          <li class="tab col s3"><a href="#tab4">Opinión</a></li>
+        </ul>
+      </div>
+      <div id="tab1" class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons left">gps_fixed</i>Geopolítica</span>
+            <p>Análisis de los puntos calientes del planeta: tensiones en el estrecho de Ormuz, elecciones en América Latina y el nuevo orden mundial.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Leer más</a>
+          </div>
+        </div>
+      </div>
+      <div id="tab2" class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons left">memory</i>Tecnología</span>
+            <p>Nvidia presenta el chip RTX Spark, la carrera por la IA local y los avances en computación cuántica.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Leer más</a>
+          </div>
+        </div>
+      </div>
+      <div id="tab3" class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons left">sports_soccer</i>Mundial 2026</span>
+            <p>Argentina vs España en semifinales. Todo sobre los estadios, tecnología de transmisión y las selecciones clasificadas.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Leer más</a>
+          </div>
+        </div>
+      </div>
+      <div id="tab4" class="col s12">
+        <div class="card">
+          <div class="card-content">
+            <span class="card-title"><i class="material-icons left">rate_review</i>Opinión</span>
+            <p>Columnas de firmas invitadas: el futuro del dólar digital y la ética de los algoritmos autónomos.</p>
+          </div>
+          <div class="card-action">
+            <a href="#">Leer más</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Parallax (efecto visual) -->
+    <div class="parallax-container">
+      <div class="parallax"><img src="https://picsum.photos/seed/materialize/1200/400" alt="Fondo"></div>
+    </div>
+
+    <!-- Cards con Materialize -->
+    <div class="row">
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://picsum.photos/seed/mat1/400/200" alt="Card 1">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator">Noticia 1<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">Ver detalles</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title">Noticia 1<i class="material-icons right">close</i></span>
+            <p>Contenido completo de la noticia sobre geopolítica.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://picsum.photos/seed/mat2/400/200" alt="Card 2">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator">Noticia 2<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">Ver detalles</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title">Noticia 2<i class="material-icons right">close</i></span>
+            <p>Detalles sobre tecnología y computación cuántica.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col s12 m4">
+        <div class="card">
+          <div class="card-image waves-effect waves-block waves-light">
+            <img class="activator" src="https://picsum.photos/seed/mat3/400/200" alt="Card 3">
+          </div>
+          <div class="card-content">
+            <span class="card-title activator">Noticia 3<i class="material-icons right">more_vert</i></span>
+            <p><a href="#">Ver detalles</a></p>
+          </div>
+          <div class="card-reveal">
+            <span class="card-title">Noticia 3<i class="material-icons right">close</i></span>
+            <p>Información sobre el Mundial 2026 y los equipos clasificados.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Botones y acciones (Materialize) -->
+    <div class="center-align" style="margin: 2rem 0;">
+      <a class="waves-effect waves-light btn"><i class="material-icons left">cloud</i>Botón</a>
+      <a class="waves-effect waves-light btn-floating"><i class="material-icons">add</i></a>
+      <a class="waves-effect waves-light btn-floating pulse"><i class="material-icons">menu</i></a>
+      <a class="waves-effect waves-light btn-flat">Plano</a>
+    </div>
+
+    <!-- Barra de progreso (Materialize) -->
+    <div class="progress">
+      <div class="determinate" style="width: 70%"></div>
+    </div>
+
+    <!-- Enlace de regreso -->
+    <div class="center-align">
+      <a href="index.html" class="back-link"><i class="material-icons left">arrow_back</i>Volver a GEOMUNDO Z</a>
+    </div>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container center-align">
+      <span style="color:#b0b7c9;">Demostración de Materialize CSS – Proyecto Final</span>
+    </div>
+  </footer>
+
+  <!-- Materialize JS (necesario para tabs, parallax, etc.) -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // Inicializar tabs
+      var tabs = document.querySelectorAll('.tabs');
+      M.Tabs.init(tabs);
+      // Inicializar parallax
+      var parallax = document.querySelectorAll('.parallax');
+      M.Parallax.init(parallax);
+    });
+  </script>
+</body>
+</html>
