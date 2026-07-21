@@ -264,22 +264,8 @@ Responsabilidades:
 
 ---
 
-# 9. Mapa de Cumplimiento por Semanas
 
-| Semana   | Actividades Desarrolladas                     | Estado   |
-| -------- | --------------------------------------------- | -------- |
-| Semana 1 | Diseño inicial del proyecto y estructura HTML | Cumplido |
-| Semana 2 | Implementación de Tailwind CSS                | Cumplido |
-| Semana 3 | Desarrollo de componentes responsivos         | Cumplido |
-| Semana 4 | Implementación de SASS (variables y mixins)   | Cumplido |
-| Semana 5 | Implementación de funciones, @for y @each     | Cumplido |
-| Semana 6 | Desarrollo de LESS y compilación CSS          | Cumplido |
-| Semana 7 | Responsive Design y accesibilidad             | Cumplido |
-| Semana 8 | Validación, pruebas y documentación técnica   | Cumplido |
-
----
-
-# 10. Evidencias de Cumplimiento de la Rúbrica
+# 9. Evidencias de Cumplimiento de la Rúbrica
 
 | Requisito         | Evidencia                            |
 | ----------------- | ------------------------------------ |
@@ -302,7 +288,7 @@ Responsabilidades:
 
 ---
 
-# 11. Conclusiones
+# 10. Conclusiones
 
 El proyecto GEOMUNDO Z permitió aplicar de forma práctica los conceptos de desarrollo frontend moderno mediante la integración de Tailwind CSS, SASS y LESS. La implementación de variables, mixins, funciones, operaciones, iteraciones, animaciones y diseño responsivo contribuyó a construir una arquitectura escalable, mantenible y alineada con buenas prácticas de desarrollo web profesional.
 
